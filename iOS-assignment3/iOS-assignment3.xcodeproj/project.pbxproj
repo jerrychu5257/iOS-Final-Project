@@ -84,6 +84,13 @@
 			path = 04_BudgetView;
 			sourceTree = "<group>";
 		};
+		564BA1572BDF755200561A5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		56BA8E4A2BD7862C00D76C63 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +110,7 @@
 		56BA8E552BD7862C00D76C63 /* iOS-assignment3 */ = {
 			isa = PBXGroup;
 			children = (
+				564BA1572BDF755200561A5F /* Models */,
 				564BA1482BDF4E1D00561A5F /* VIews */,
 				56BA8E562BD7862C00D76C63 /* iOS_assignment3App.swift */,
 				56BA8E5A2BD7862E00D76C63 /* Assets.xcassets */,
