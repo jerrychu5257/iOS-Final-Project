@@ -10,7 +10,6 @@ import SwiftUI
 struct SearchView: View {
     var body: some View {
         ZStack{
-            NavigationBarView()
             Text("This is Search screen")
         }
     }

@@ -10,7 +10,6 @@ import SwiftUI
 struct OrderView: View {
     var body: some View {
         ZStack{
-            NavigationBarView()
             Text("This is Order screen")
         }
     }

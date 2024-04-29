@@ -10,7 +10,6 @@ import SwiftUI
 struct BudgetView: View {
     var body: some View {
         ZStack{
-            NavigationBarView()
             Text("This is Budget screen")
         }
     }

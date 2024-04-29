@@ -10,12 +10,34 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TabView{
+                HomeView()
+                    .tabItem {
+                        Image("icon_Home")
+                        Text("Home")
+                    }
+                SearchView()
+                    .tabItem {
+                        Image("icon_Search")
+                        Text("Search")
+                    }
+                OrderView()
+                    .tabItem {
+                        Image("icon_Shopping cart")
+                        Text("Order")
+                    }
+                    .badge(1)
+                BudgetView()
+                    .tabItem {
+                        Image("icon_Wallet")
+                        Text("Budget")
+                    }
+                    .badge(1)
+            }
+            .background(Color.gray)
         }
         .padding()
+        .ignoresSafeArea()
     }
 }
 
