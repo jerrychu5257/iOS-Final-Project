@@ -72,98 +72,87 @@ struct SearchView: View {
     ]
     
     var body: some View {
-        ScrollView{
-            VStack{
-                Text("Search")
-                    .font(.title)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .padding(.horizontal, 32)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Text("Restaurant near you")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .padding(.horizontal, 32)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, 16)
-                ScrollView(.horizontal){
-                    HStack{
-                        ForEach(0..<restaurantImages.count) { index in
-                            VStack{
-                                Image(restaurantImages[index])
-                                    .resizable()
-                                    .frame(width: 80, height: 80)
-                                    .cornerRadius(16)
-                                Text(restaurantNames[index])
-                                    .font(.system(size: 12))
+        NavigationView{
+            ScrollView{
+                VStack{
+                    Text("Search")
+                        .font(.title)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .padding(.horizontal, 32)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Restaurant near you")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .padding(.horizontal, 32)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.vertical, 16)
+                    ScrollView(.horizontal){
+                        HStack{
+                            ForEach(0..<restaurantImages.count, id: \.self) { index in
+                                VStack{
+                                    Image(restaurantImages[index])
+                                        .resizable()
+                                        .frame(width: 80, height: 80)
+                                        .cornerRadius(16)
+                                    Text(restaurantNames[index])
+                                        .font(.system(size: 12))
+                                }
                             }
                         }
+                        .padding(.horizontal, 32)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .padding(.horizontal, 32)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                Text("Food near you")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .padding(.horizontal, 32)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, 16)
-                HStack{
-                    VStack{
-                        ForEach(0..<foodImages.count/2){ index in
-                            VStack{
-                                Image(foodImages[index])
-                                    .resizable()
-                                    .frame(width: 160, height: 100)
-                                    .cornerRadius(16)
-                                Text(foodNames[index])
-                                    .font(.system(size: 16))
-                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                    .frame(width: 160, alignment: .leading)
+                    Text("Food near you")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .padding(.horizontal, 32)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.vertical, 16)
+                    HStack{
+                        VStack{
+                            ForEach(0..<foodImages.count/2, id: \.self){ index in
+                                NavigationLink(destination: CollectionView()){
+                                    VStack{
+                                        Image(foodImages[index])
+                                            .resizable()
+                                            .frame(width: 160, height: 100)
+                                            .cornerRadius(16)
+                                        Text(foodNames[index])
+                                            .font(.system(size: 16))
+                                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                            .foregroundColor(.black)
+                                            .frame(width: 160, alignment: .leading)
+                                    }
+                                    .padding(.vertical, 6)
+                                }
+                                
+                            }
+                        }
+                        VStack{
+                            ForEach(0..<foodImages.count/2, id: \.self){ index in
+                                NavigationLink(destination: CollectionView()){
+                                    VStack{
+                                        Image(foodImages[index+8])
+                                            .resizable()
+                                            .frame(width: 160, height: 100)
+                                            .cornerRadius(16)
+                                        Text(foodNames[index+8])
+                                            .font(.system(size: 16))
+                                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                            .foregroundColor(.black)
+                                            .frame(width: 160, alignment: .leading)
+                                    }
+                                }
                             }
                             .padding(.vertical, 6)
                         }
                     }
-                    VStack{
-                        ForEach(0..<foodImages.count/2){ index in
-                            VStack{
-                                Image(foodImages[index+8])
-                                    .resizable()
-                                    .frame(width: 160, height: 100)
-                                    .cornerRadius(16)
-                                Text(foodNames[index+8])
-                                    .font(.system(size: 16))
-                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                    .frame(width: 160, alignment: .leading)
-                            }
-                        }
-                        .padding(.vertical, 6)
-                    }
+                    .padding(.horizontal, 32)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                
-                
-//                HStack{
-//                    VStack{
-//                        Image("image_restaurant_Mac")
-//                            .resizable()
-//                            .frame(width: 160, height: 100)
-//                        Text("FastFood")
-//                            .font(.system(size: 16))
-//                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                            .frame(width: 160, alignment: .leading)
-//                    }
-//                    VStack{
-//                        Image("image_restaurant_Mac")
-//                            .resizable()
-//                            .frame(width: 160, height: 100)
-//                        Text("Chinese Food")
-//                            .font(.system(size: 16))
-//                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                            .frame(width: 160, alignment: .leading)
-//                    }
-//                }
-                .padding(.horizontal, 32)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
             }
-            Spacer()
         }
+        .navigationBarHidden(true)
+        
     }
 }
 
