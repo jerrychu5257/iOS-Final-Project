@@ -22,7 +22,7 @@ struct SearchView: View {
     
     @State var restaurantNames =
     [
-        "Macdonald",
+        "McDonald's",
         "KFC",
         "MadMex",
         "TacoBell",
