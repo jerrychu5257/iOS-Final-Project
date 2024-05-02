@@ -70,36 +70,39 @@ struct CollectionView: View {
             
             // List
             ForEach(viewModel.restaurants){ restaurant in
-                HStack{
-                    Image(restaurant.image)
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .cornerRadius(16)
-                    VStack{
-                        Text(restaurant.name)
-                            .frame(width: 140, alignment: .leading)
-                            .fontWeight(.bold)
-                            .font(.system(size: 20))
-                        Text("Rating: \(String(format: "%.1f", restaurant.rating))")
-                            .frame(width: 140, alignment: .leading)
-                            .font(.system(size: 14))
-                        Text("Delivery Time: \(restaurant.deliveryTime) min")
-                            .frame(width: 140, alignment: .leading)
-                            .font(.system(size: 14))
+                NavigationLink(destination: RestaurantView()){
+                    HStack{
+                        Image(restaurant.image)
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                            .cornerRadius(16)
+                        VStack{
+                            Text(restaurant.name)
+                                .frame(width: 140, alignment: .leading)
+                                .fontWeight(.bold)
+                                .font(.system(size: 20))
+                            Text("Rating: \(String(format: "%.1f", restaurant.rating))")
+                                .frame(width: 140, alignment: .leading)
+                                .font(.system(size: 14))
+                            Text("Delivery Time: \(restaurant.deliveryTime) min")
+                                .frame(width: 140, alignment: .leading)
+                                .font(.system(size: 14))
+                        }
+                        .padding(.horizontal, 8)
+                        Spacer()
+                        ZStack{
+                            Rectangle()
+                                .frame(width: 60, height: 60)
+                                .cornerRadius(30)
+                                .foregroundColor(.gray.opacity(0.2))
+                            Text("$\(String(format: "%.1f", restaurant.lowestPrice))")
+                                .fontWeight(.bold)
+                                .font(.system(size: 20))
+                        }
                     }
-                    .padding(.horizontal, 8)
-                    Spacer()
-                    ZStack{
-                        Rectangle()
-                            .frame(width: 60, height: 60)
-                            .cornerRadius(30)
-                            .foregroundColor(.gray.opacity(0.2))
-                        Text("$\(String(format: "%.1f", restaurant.lowestPrice))")
-                            .fontWeight(.bold)
-                            .font(.system(size: 20))
-                    }
+                    .padding(.horizontal, 32)
                 }
-                .padding(.horizontal, 32)
+                .foregroundColor(.black)
             }
             //List End
             
