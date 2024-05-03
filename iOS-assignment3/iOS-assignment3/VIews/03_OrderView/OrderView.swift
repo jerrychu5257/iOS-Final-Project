@@ -14,24 +14,25 @@ struct OrdersView: View {
                 // Order Summary Section
                 VStack(alignment: .leading) {
                     HStack {
-                        Image("MCD") // Your image name from the Assets catalog
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 100, height: 100)
-                            .background(Color.white)
-                            .cornerRadius(8)
+                        Image(systemName: "photo.on.rectangle") // Replace with 'Image("YourImageName")' to use a custom image
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 100, height: 100)
+                                                .background(Color.gray)
+                                                .cornerRadius(8)
 
-                        
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("McDonald's")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            Text("Burger - 20$")
-                                .font(.subheadline)
-                            Text("8Cowper St)")
-                                .font(.subheadline)
-                                .padding(.top, 2)
-                        }
+                                            VStack(alignment: .leading, spacing: 4) {
+                                                Text("Restaurant Name")
+                                                    .font(.headline)
+                                                    .fontWeight(.bold)
+                                                
+                                                Text("X item - Price")
+                                                    .font(.subheadline)
+                                                
+                                                Text("Deliver to (Address)")
+                                                    .font(.subheadline)
+                                                    .padding(.top, 2)
+                                            }
                         
                         Spacer()
                         

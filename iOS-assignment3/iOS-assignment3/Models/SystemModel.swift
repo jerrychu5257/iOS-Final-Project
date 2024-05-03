@@ -14,6 +14,8 @@ class System: ObservableObject{
     
     // orders
     @Published var restaurantOrder: Restaurant = Restaurant(image: "", name: "", rating: 0.0, deliveryTime: 0, lowestPrice: 0.0)
-    @Published var orderItems: [OrderItem] = []
+    @Published var orderItems: [RestaurantOrderItem] = []
+    @Published var orderItemsAmount: Int = 0
+    
 
 }

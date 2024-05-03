@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct OrderItem: Identifiable {
+struct RestaurantOrderItem: Identifiable {
     var id = UUID()
     var image: String
     var name: String
     var price: Float
-    var amount: Int
 }
