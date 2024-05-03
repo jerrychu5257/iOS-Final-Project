@@ -13,8 +13,8 @@ struct RestaurantView: View {
     @EnvironmentObject var system: System
     @ObservedObject var viewModel = OrderItemListViewModel()
     
-    @State var selectedItem: OrderItem = OrderItem(image: "", name: "", price: 0.0, amount: 0)
-    @State var selectedItems: [OrderItem] = []
+    @State var selectedItem: RestaurantOrderItem = RestaurantOrderItem(image: "", name: "", price: 0.0, amount: 0)
+    @State var selectedItems: [RestaurantOrderItem] = []
     
     var body: some View {
         ZStack{
