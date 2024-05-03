@@ -9,7 +9,10 @@ import SwiftUI
 
 struct CollectionView: View {
     
-    @ObservedObject var viewModel = RestaurantViewModel()
+    @EnvironmentObject var system: System
+    @ObservedObject var viewModel = RestaurantListViewModel()
+    
+    @State var selectedRestaurant: Restaurant = Restaurant(image: "", name: "", rating: 0, deliveryTime: 0, lowestPrice: 0)
     
     var body: some View {
         ScrollView{
@@ -69,22 +72,22 @@ struct CollectionView: View {
                 .padding(.vertical, 8)
             
             // List
-            ForEach(viewModel.restaurants){ restaurant in
-                NavigationLink(destination: RestaurantView()){
+            ForEach(0..<viewModel.restaurants.count, id: \.self){ index in
+                NavigationLink(destination: RestaurantView()) {
                     HStack{
-                        Image(restaurant.image)
+                        Image(viewModel.restaurants[index].image)
                             .resizable()
                             .frame(width: 80, height: 80)
                             .cornerRadius(16)
                         VStack{
-                            Text(restaurant.name)
+                            Text(viewModel.restaurants[index].name)
                                 .frame(width: 140, alignment: .leading)
                                 .fontWeight(.bold)
                                 .font(.system(size: 20))
-                            Text("Rating: \(String(format: "%.1f", restaurant.rating))")
+                            Text("Rating: \(String(format: "%.1f", viewModel.restaurants[index].rating))")
                                 .frame(width: 140, alignment: .leading)
                                 .font(.system(size: 14))
-                            Text("Delivery Time: \(restaurant.deliveryTime) min")
+                            Text("Delivery Time: \(viewModel.restaurants[index].deliveryTime) min")
                                 .frame(width: 140, alignment: .leading)
                                 .font(.system(size: 14))
                         }
@@ -95,7 +98,7 @@ struct CollectionView: View {
                                 .frame(width: 60, height: 60)
                                 .cornerRadius(30)
                                 .foregroundColor(.gray.opacity(0.2))
-                            Text("$\(String(format: "%.1f", restaurant.lowestPrice))")
+                            Text("$\(String(format: "%.1f", viewModel.restaurants[index].lowestPrice))")
                                 .fontWeight(.bold)
                                 .font(.system(size: 20))
                         }
@@ -103,7 +106,16 @@ struct CollectionView: View {
                     .padding(.horizontal, 32)
                 }
                 .foregroundColor(.black)
+                .simultaneousGesture(TapGesture().onEnded {
+                    selectedRestaurant.image = viewModel.restaurants[index].image
+                    selectedRestaurant.name = viewModel.restaurants[index].name
+                    selectedRestaurant.rating = viewModel.restaurants[index].rating
+                    selectedRestaurant.deliveryTime = viewModel.restaurants[index].deliveryTime
+                    selectedRestaurant.lowestPrice = viewModel.restaurants[index].lowestPrice
+                    system.restaurantOrder = selectedRestaurant
+                })
             }
+            
             //List End
             
             Spacer()
@@ -113,5 +125,6 @@ struct CollectionView: View {
 }
 
 #Preview {
-    CollectionView(viewModel: RestaurantViewModel())
+    CollectionView(viewModel: RestaurantListViewModel())
+        .environmentObject(System())
 }

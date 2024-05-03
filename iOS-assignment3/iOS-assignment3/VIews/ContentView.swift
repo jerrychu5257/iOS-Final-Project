@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var system: System
+    
     var body: some View {
         VStack {
             TabView{
@@ -26,13 +29,13 @@ struct ContentView: View {
                         Image("icon_Shopping cart")
                         Text("Order")
                     }
-                    .badge(1)
+                    .badge(system.orderbadge)
                 BudgetView()
                     .tabItem {
                         Image("icon_Wallet")
                         Text("Budget")
                     }
-                    .badge(1)
+                    .badge(system.budgetbadge)
             }
             .background(Color.gray)
         }
@@ -43,4 +46,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(System())
 }
