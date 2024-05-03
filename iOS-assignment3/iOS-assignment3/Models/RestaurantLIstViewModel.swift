@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RestaurantViewModel: ObservableObject{
+class RestaurantListViewModel: ObservableObject{
     @Published var restaurants: [Restaurant] = []
     
     init(){
