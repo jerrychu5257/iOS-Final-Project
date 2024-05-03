@@ -13,7 +13,7 @@ struct RestaurantView: View {
     @EnvironmentObject var system: System
     @ObservedObject var viewModel = OrderItemListViewModel()
     
-    @State var selectedItem: RestaurantOrderItem = RestaurantOrderItem(image: "", name: "", price: 0.0, amount: 0)
+    @State var selectedItem: RestaurantOrderItem = RestaurantOrderItem(image: "", name: "", price: 0.0)
     @State var selectedItems: [RestaurantOrderItem] = []
     
     var body: some View {
@@ -185,6 +185,7 @@ struct RestaurantView: View {
                                     selectedItem.price = viewModel.orderItems[index+8].price
                                     selectedItems.append(selectedItem)
                                     
+                                    
                                 }, label: {
                                     Text("Add 1 to Cart")
                                         .frame(width: 140, alignment: .center)
@@ -221,10 +222,12 @@ struct RestaurantView: View {
                         system.orderbadge += 1
                     }
                     // Order Items = 0
+                    system.orderItemsAmount = orderItemAmount
                     orderItemAmount = 0
                     // send orderItems to Cart
                     system.orderItems = selectedItems
                     selectedItems = []
+                    
                     
                 }, label: {
                     Text("Place Order (\(orderItemAmount))")
