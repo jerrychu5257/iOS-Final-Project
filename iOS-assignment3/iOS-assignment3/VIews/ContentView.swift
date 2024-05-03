@@ -24,7 +24,7 @@ struct ContentView: View {
                         Image("icon_Search")
                         Text("Search")
                     }
-                OrderView()
+                OrdersView()
                     .tabItem {
                         Image("icon_Shopping cart")
                         Text("Order")

@@ -18,6 +18,9 @@
 		564BA1612BE3C3BA00561A5F /* SystemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA1602BE3C3BA00561A5F /* SystemModel.swift */; };
 		564BA1632BE473BC00561A5F /* OrderItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA1622BE473BC00561A5F /* OrderItemModel.swift */; };
 		564BA1652BE474F200561A5F /* OrderItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA1642BE474F200561A5F /* OrderItemListViewModel.swift */; };
+		564BA1672BE4DB0700561A5F /* AddManually.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA1662BE4DB0700561A5F /* AddManually.swift */; };
+		564BA1692BE4DB1100561A5F /* OrderScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA1682BE4DB1100561A5F /* OrderScreen2.swift */; };
+		564BA16B2BE4DB1800561A5F /* ViewCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA16A2BE4DB1800561A5F /* ViewCart.swift */; };
 		56BA8E572BD7862C00D76C63 /* iOS_assignment3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA8E562BD7862C00D76C63 /* iOS_assignment3App.swift */; };
 		56BA8E592BD7862C00D76C63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA8E582BD7862C00D76C63 /* ContentView.swift */; };
 		56BA8E5B2BD7862E00D76C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BA8E5A2BD7862E00D76C63 /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 		564BA1602BE3C3BA00561A5F /* SystemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemModel.swift; sourceTree = "<group>"; };
 		564BA1622BE473BC00561A5F /* OrderItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemModel.swift; sourceTree = "<group>"; };
 		564BA1642BE474F200561A5F /* OrderItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemListViewModel.swift; sourceTree = "<group>"; };
+		564BA1662BE4DB0700561A5F /* AddManually.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddManually.swift; sourceTree = "<group>"; };
+		564BA1682BE4DB1100561A5F /* OrderScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderScreen2.swift; sourceTree = "<group>"; };
+		564BA16A2BE4DB1800561A5F /* ViewCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCart.swift; sourceTree = "<group>"; };
 		56BA8E532BD7862C00D76C63 /* iOS-assignment3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-assignment3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56BA8E562BD7862C00D76C63 /* iOS_assignment3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_assignment3App.swift; sourceTree = "<group>"; };
 		56BA8E582BD7862C00D76C63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				564BA1512BDF4ED600561A5F /* OrderView.swift */,
+				564BA1662BE4DB0700561A5F /* AddManually.swift */,
+				564BA1682BE4DB1100561A5F /* OrderScreen2.swift */,
+				564BA16A2BE4DB1800561A5F /* ViewCart.swift */,
 			);
 			path = 03_OrderView;
 			sourceTree = "<group>";
@@ -222,11 +231,14 @@
 				564BA1502BDF4EC800561A5F /* SearchView.swift in Sources */,
 				564BA15D2BE260E600561A5F /* RestaurantModel.swift in Sources */,
 				564BA1542BDF4EE300561A5F /* BudgetView.swift in Sources */,
+				564BA1692BE4DB1100561A5F /* OrderScreen2.swift in Sources */,
 				564BA1632BE473BC00561A5F /* OrderItemModel.swift in Sources */,
 				564BA1592BE1EEEE00561A5F /* CollectionView.swift in Sources */,
 				564BA15B2BE1EF0100561A5F /* RestaurantView.swift in Sources */,
 				564BA14E2BDF4EBA00561A5F /* HomeView.swift in Sources */,
+				564BA16B2BE4DB1800561A5F /* ViewCart.swift in Sources */,
 				56BA8E592BD7862C00D76C63 /* ContentView.swift in Sources */,
+				564BA1672BE4DB0700561A5F /* AddManually.swift in Sources */,
 				564BA15F2BE26B0600561A5F /* RestaurantLIstViewModel.swift in Sources */,
 				564BA1652BE474F200561A5F /* OrderItemListViewModel.swift in Sources */,
 				56BA8E572BD7862C00D76C63 /* iOS_assignment3App.swift in Sources */,
