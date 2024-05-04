@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ViewCartScreen: View {
+    @EnvironmentObject var system: System
     // Sample data for cart items
     struct CartItem {
         let id: Int
@@ -28,13 +29,13 @@ struct ViewCartScreen: View {
 
     var body: some View {
         VStack {
-            Text("Restaurant Name")
+            Text(system.restaurantOrder.name)
                 .font(.title)
                 .padding()
             
-            List(cartItems, id: \.id) { item in
+            ForEach(0..<system.orderItems.count, id: \.self){index in
                 HStack {
-                    Image(systemName: "photo") // Placeholder for the image, replace with actual image name
+                    Image(system.orderItems[index].image) // Placeholder for the image, replace with actual image name
                         .resizable()
                         .scaledToFit()
                         .frame(width: 50, height: 50)
@@ -42,10 +43,10 @@ struct ViewCartScreen: View {
                         .cornerRadius(8)
                     
                     VStack(alignment: .leading) {
-                        Text(item.name)
+                        Text(system.orderItems[index].name)
                             .font(.headline)
-                        Text("Item amount: \(item.amount)")
-                        Text("Price: \(item.price, specifier: "%.2f")")
+                        Text("Item amount: 1")
+                        Text("Price: \(String(format:"%.1f", system.orderItems[index].price))")
                     }
                     
                     Spacer()
@@ -100,15 +101,8 @@ struct ViewCartScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ViewCartScreen()
+                .environmentObject(System())
         }
     }
 }
 
-//
-//  File3.swift
-//  iOS-assignment3
-//
-//  Created by Chien Yuan Chu on 2024/5/3.
-//
-
-import Foundation

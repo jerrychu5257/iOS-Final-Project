@@ -15,7 +15,7 @@ struct OrderItem: Identifiable {
 }
 
 struct OrdersScreen: View {
-    let orders = [
+    @State private var orders = [
         OrderItem(restaurantName: "Restaurant Name", itemDescription: "X item - Price", address: "Deliver to (Address)"),
         OrderItem(restaurantName: "Restaurant Name", itemDescription: "X item - Price", address: "Deliver to (Address)")
         // Add more orders as necessary
@@ -43,19 +43,23 @@ struct OrdersScreen: View {
                                         .font(.subheadline)
                                 }
                                 Spacer()
-                                Image(systemName: "trash")
+                                Button(action: {
+                                    removeOrder(at: index)
+                                }) {
+                                    Image(systemName: "trash")
+                                }
                             }
                             .padding()
                             
                             if index == 0 {
-                                    Button("View Cart") {
-                                        // action to view cart
-                                    }
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                                    .padding()
-                                    .background(Color.gray)
-                                    .foregroundColor(Color.black)
-                                    .cornerRadius(10)
+                                Button("View Cart") {
+                                    // action to view cart
+                                }
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .padding()
+                                .background(Color.gray)
+                                .foregroundColor(Color.black)
+                                .cornerRadius(10)
                                 .padding(.bottom)
                             } else {
                                 Button("Add into Budget") {
@@ -74,28 +78,32 @@ struct OrdersScreen: View {
                         .shadow(radius: 1)
                         .padding(.horizontal)
                     }
-                    
-                    Button("Add Order Manually") {
-                        // action to add order manually
+                    NavigationLink(destination: AddOrderManuallyView()) {
+                        Button("Add Order Manually") {
+                            // action to add order manually
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray)
+                        .foregroundColor(Color.black)
+                        .cornerRadius(10)
+                        .padding()
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.gray)
-                    .foregroundColor(Color.black)
-                    .cornerRadius(10)
-                    .padding()
                 }
+                .navigationBarTitle("Orders", displayMode: .inline)
             }
-            .navigationBarTitle("Orders", displayMode: .inline)
         }
     }
-}
-
-struct OrdersScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        OrdersScreen()
+        func removeOrder(at index: Int) {
+            orders.remove(at:index)
+        }
     }
-}
+
+    struct OrdersScreen_Previews: PreviewProvider {
+        static var previews: some View {
+            OrdersScreen()
+        }
+    }
 
 
 
