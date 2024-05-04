@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct OrdersView: View {
+    @EnvironmentObject var system: System
     var body: some View {
         NavigationView {
             VStack {
                 // Order Summary Section
                 VStack(alignment: .leading) {
                     HStack {
-                        Image(systemName: "photo.on.rectangle") // Replace with 'Image("YourImageName")' to use a custom image
+                        Image(system.restaurantOrder.image ) // Replace with 'Image("YourImageName")' to use a custom image
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(width: 100, height: 100)
@@ -22,14 +23,14 @@ struct OrdersView: View {
                                                 .cornerRadius(8)
 
                                             VStack(alignment: .leading, spacing: 4) {
-                                                Text("Restaurant Name")
+                                                Text(system.restaurantOrder.name)
                                                     .font(.headline)
                                                     .fontWeight(.bold)
                                                 
-                                                Text("X item - Price")
+                                                Text("\(system.orderItemsAmount) item ")
                                                     .font(.subheadline)
                                                 
-                                                Text("Deliver to (Address)")
+                                                Text("Deliver To : UTS Building 11")
                                                     .font(.subheadline)
                                                     .padding(.top, 2)
                                             }
@@ -44,13 +45,12 @@ struct OrdersView: View {
                         }
                     }
                     .padding()
-                    
                     NavigationLink(destination: ViewCartScreen()) {
                                             Text("View Cart")
                                                 .frame(minWidth: 0, maxWidth: .infinity)
                                                 .padding()
-                                                .foregroundColor(.white)
-                                                .background(Color.black)
+                                                .foregroundColor(.black)
+                                                .background(Color.gray)
                                                 .cornerRadius(8)
                                         }
                                         .padding(.horizontal)
@@ -64,8 +64,8 @@ struct OrdersView: View {
                     Text("Add Order Manually")
                         .frame(minWidth: 290, maxWidth:30)
                         .padding()
-                        .background(Color.black)
-                        .foregroundColor(.white)
+                        .background(Color.gray)
+                        .foregroundColor(.black)
                         .cornerRadius(8)
                 }
                 .padding([.horizontal, .bottom])
@@ -88,6 +88,7 @@ struct OrdersView: View {
 struct OrdersView_Previews: PreviewProvider {
     static var previews: some View {
         OrdersView()
+            .environmentObject(System())
     }
 }
 
