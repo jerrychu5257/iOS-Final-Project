@@ -13,7 +13,7 @@ struct RestaurantView: View {
     @EnvironmentObject var system: System
     @ObservedObject var viewModel = OrderItemListViewModel()
     
-    @State var selectedItem: RestaurantOrderItem = RestaurantOrderItem(image: "", name: "", price: 0.0)
+    @State var selectedItem: RestaurantOrderItem = RestaurantOrderItem(image: "", name: "", price: 0.0, amount: 0)
     @State var selectedItems: [RestaurantOrderItem] = []
     
     var body: some View {
@@ -86,10 +86,13 @@ struct RestaurantView: View {
                                     .font(.system(size: 16))
                                 Button(action: {
                                     orderItemAmount += 1
+                                    // calculate price
+                                    system.orderItemsTotalPrice += viewModel.orderItems[index].price
                                     // add orderitem
                                     selectedItem.image = viewModel.orderItems[index].image
                                     selectedItem.name = viewModel.orderItems[index].name
                                     selectedItem.price = viewModel.orderItems[index].price
+                                    selectedItem.amount = viewModel.orderItems[index].amount
                                     selectedItems.append(selectedItem)
                                 }, label: {
                                     Text("Add 1 to Cart")
@@ -132,10 +135,13 @@ struct RestaurantView: View {
                                     .font(.system(size: 16))
                                 Button(action: {
                                     orderItemAmount += 1
+                                    // calculate price
+                                    system.orderItemsTotalPrice += viewModel.orderItems[index].price
                                     // add orderitem
                                     selectedItem.image = viewModel.orderItems[index+5].image
                                     selectedItem.name = viewModel.orderItems[index+5].name
                                     selectedItem.price = viewModel.orderItems[index+5].price
+                                    selectedItem.amount = viewModel.orderItems[index].amount
                                     selectedItems.append(selectedItem)
                                     
                                 }, label: {
@@ -179,10 +185,13 @@ struct RestaurantView: View {
                                     .font(.system(size: 16))
                                 Button(action: {
                                     orderItemAmount += 1
+                                    // calculate price
+                                    system.orderItemsTotalPrice += viewModel.orderItems[index].price
                                     // add orderitem
                                     selectedItem.image = viewModel.orderItems[index+8].image
                                     selectedItem.name = viewModel.orderItems[index+8].name
                                     selectedItem.price = viewModel.orderItems[index+8].price
+                                    selectedItem.amount = viewModel.orderItems[index].amount
                                     selectedItems.append(selectedItem)
                                     
                                     

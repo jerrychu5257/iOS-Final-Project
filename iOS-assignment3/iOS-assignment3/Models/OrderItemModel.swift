@@ -12,4 +12,5 @@ struct RestaurantOrderItem: Identifiable {
     var image: String
     var name: String
     var price: Float
+    var amount: Int
 }
