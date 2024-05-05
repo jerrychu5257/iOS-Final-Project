@@ -30,7 +30,7 @@ struct AddOrderManuallyView: View {
     @State private var itemAmount: String = ""
     @State private var price: String = ""
     // State to manage navigation programmatically
-        @State private var shouldNavigateToOrders = false
+    @State private var shouldNavigateToOrders = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -64,7 +64,7 @@ struct AddOrderManuallyView: View {
             
             Spacer()
             // Invisible NavigationLink activated by the shouldNavigateToOrders state
-                        NavigationLink(destination: OrdersScreen(), isActive: $shouldNavigateToOrders) { EmptyView() }
+            
             Button(action: {
                 // Perform the add action here
                 if let amount = Int(itemAmount), let itemPrice = Double(price) {
@@ -75,9 +75,10 @@ struct AddOrderManuallyView: View {
                     itemAmount = ""
                     price = ""
                     // Trigger navigation to OrdersScreen
-                                        shouldNavigateToOrders = true
+                    shouldNavigateToOrders = true
                 }
             }) {
+                NavigationLink(destination: OrdersScreen(), isActive: $shouldNavigateToOrders) { EmptyView() }
                 NavigationLink(destination: OrdersScreen()) {
                     Text("Add")
                         .frame(minWidth: 0, maxWidth: .infinity)
@@ -95,12 +96,13 @@ struct AddOrderManuallyView: View {
             })
         }
     }
-    
     struct AddOrderManuallyView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                AddOrderManuallyView().environmentObject(OrderManager())
+                AddOrderManuallyView()
+                    .environmentObject(OrderManager()) // Injecting the OrderManager environment object
             }
         }
     }
 }
+

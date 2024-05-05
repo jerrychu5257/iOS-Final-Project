@@ -25,6 +25,7 @@
 		56BA8E592BD7862C00D76C63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA8E582BD7862C00D76C63 /* ContentView.swift */; };
 		56BA8E5B2BD7862E00D76C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BA8E5A2BD7862E00D76C63 /* Assets.xcassets */; };
 		56BA8E5E2BD7862E00D76C63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BA8E5D2BD7862E00D76C63 /* Preview Assets.xcassets */; };
+		81C6A2AC2BE746AB00A760B6 /* OrderPlaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6A2AB2BE746AB00A760B6 /* OrderPlaced.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		56BA8E582BD7862C00D76C63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		56BA8E5A2BD7862E00D76C63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56BA8E5D2BD7862E00D76C63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81C6A2AB2BE746AB00A760B6 /* OrderPlaced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPlaced.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				564BA1662BE4DB0700561A5F /* AddManually.swift */,
 				564BA1682BE4DB1100561A5F /* OrderScreen2.swift */,
 				564BA16A2BE4DB1800561A5F /* ViewCart.swift */,
+				81C6A2AB2BE746AB00A760B6 /* OrderPlaced.swift */,
 			);
 			path = 03_OrderView;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				564BA1612BE3C3BA00561A5F /* SystemModel.swift in Sources */,
 				564BA1502BDF4EC800561A5F /* SearchView.swift in Sources */,
+				81C6A2AC2BE746AB00A760B6 /* OrderPlaced.swift in Sources */,
 				564BA15D2BE260E600561A5F /* RestaurantModel.swift in Sources */,
 				564BA1542BDF4EE300561A5F /* BudgetView.swift in Sources */,
 				564BA1692BE4DB1100561A5F /* OrderScreen2.swift in Sources */,
