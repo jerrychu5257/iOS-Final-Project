@@ -9,99 +9,78 @@ import SwiftUI
 
 struct ViewCartScreen: View {
     @EnvironmentObject var system: System
-    // Sample data for cart items
-    struct CartItem {
-        let id: Int
-        let name: String
-        let amount: Int
-        let price: Double
-    }
-    
-    let cartItems: [CartItem] = [
-        .init(id: 0, name: "Burger", amount: 1, price: 9.99),
-        .init(id: 1, name: "Fries", amount: 1, price: 19.98),
-        .init(id: 2, name: "Coke", amount: 1, price: 29)
-    ]
-    
-    var subtotal: Double {
-        cartItems.reduce(0) { $0 + $1.price }
-    }
+    @State private var navigateToCheckout = false
 
     var body: some View {
-        VStack {
-            Text(system.restaurantOrder.name)
-                .font(.title)
-                .padding()
-            
-            ForEach(0..<system.orderItems.count, id: \.self){index in
-                HStack {
-                    Image(system.orderItems[index].image) // Placeholder for the image, replace with actual image name
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50, height: 50)
-                        .background(Color.gray)
-                        .cornerRadius(8)
-                    
-                    VStack(alignment: .leading) {
-                        Text(system.orderItems[index].name)
-                            .font(.headline)
-                        Text("Item amount: 1")
-                        Text("Price: \(String(format:"%.1f", system.orderItems[index].price))")
-                    }
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        // Action for delete button
-                    }) {
-                        Image(systemName: "trash")
-                    }
-                    .foregroundColor(.black)
-                    
-                    Button(action: {
-                        // Action for add button
-                    }) {
-                        Image(systemName: "plus")
-                    }
-                    .foregroundColor(.black)
-                }
-            }
-            
-            HStack {
-                Text("Subtotal")
-                    .font(.headline)
-                Spacer()
-                Text("\(subtotal, specifier: "%.2f") Dollar")
-                    .font(.headline)
-            }
-            .padding()
-            
-            Button(action: {
-                // Action for checkout button
-            }) {
-                Text("Checkout")
-                    .frame(minWidth: 0, maxWidth: .infinity)
+        NavigationView {
+            VStack {
+                Text(system.restaurantOrder.name)
+                    .font(.title)
                     .padding()
-                    .foregroundColor(.white)
-                    .background(Color.black)
-                    .cornerRadius(8)
+
+                ForEach(0..<system.orderItems.count, id: \.self){index in
+                    HStack {
+                        Image(system.orderItems[index].image)  // Ensure the image is in your assets
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .background(Color.gray)
+                            .cornerRadius(8)
+
+                        VStack(alignment: .leading) {
+                            Text(system.orderItems[index].name)
+                                .font(.headline)
+                            Text("Item amount: 1")
+                            Text("Price: $\(system.orderItems[index].price, specifier: "%.2f")")
+                        }
+
+                        Spacer()
+
+                        Button(action: {
+                            system.removeItem(id: system.orderItems[index].id)
+                        }) {
+                            Image(systemName: "trash")
+                        }
+                        .foregroundColor(.black)
+
+                        Button(action: {
+                            system.addItem(id: system.orderItems[index].id)
+                        }) {
+                            Image(systemName: "plus")
+                        }
+                        .foregroundColor(.black)
+                    }
+                }
+
+                HStack {
+                    Text("Subtotal")
+                        .font(.headline)
+                    Spacer()
+                    Text("$\(system.orderItemsTotalPrice, specifier: "%.2f")")
+                        .font(.headline)
+                }
+                .padding()
+
+                Button("Checkout") {
+                    system.orderbadge = 0
+                    navigateToCheckout = true
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.black)
+                .cornerRadius(8)
+                .padding()
+                NavigationLink("", destination: CheckoutScreen(), isActive: $navigateToCheckout)
             }
-            .padding()
+            .navigationBarTitle("View Cart", displayMode: .inline)
         }
-        .navigationBarTitle("View Cart", displayMode: .inline)
-        .navigationBarItems(leading: Button(action: {
-            // Action to dismiss the view or go back
-        }) {
-            
-        })
     }
 }
-
 struct ViewCartScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ViewCartScreen()
-                .environmentObject(System())
+            ViewCartScreen().environmentObject(System())
         }
     }
 }
