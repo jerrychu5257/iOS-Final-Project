@@ -12,6 +12,7 @@ struct iOS_assignment3App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(System())
         }
     }
 }

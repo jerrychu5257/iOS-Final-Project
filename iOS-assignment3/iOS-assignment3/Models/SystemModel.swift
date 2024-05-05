@@ -17,6 +17,29 @@ class System: ObservableObject{
     @Published var orderItems: [RestaurantOrderItem] = []
     @Published var orderItemsAmount: Int = 0
     @Published var orderItemsTotalPrice: Float = 0.0
-    
+    struct CartItem: Identifiable {
+            let id: UUID = UUID()
+            var name: String
+            var amount: Int
+            var price: Double
+        }
+    func addItem(id: UUID) {
+            if let index = orderItems.firstIndex(where: { $0.id == id }) {
+                orderItems[index].amount += 1
+                orderItemsTotalPrice += orderItems[index].price  // Assuming price stays constant and you just need to recalculate the total
+            }
+        }
 
-}
+        func removeItem(id: UUID) {
+            if let index = orderItems.firstIndex(where: { $0.id == id }) {
+                if orderItems[index].amount > 0 {
+                    orderItems[index].amount -= 1
+                    orderItemsTotalPrice -= orderItems[index].price
+                }
+                if orderItems[index].amount == 0 {
+                    orderItems.remove(at: index)
+                }
+            }
+        }
+    }
+    
