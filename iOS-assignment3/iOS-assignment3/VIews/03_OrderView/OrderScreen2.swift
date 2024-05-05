@@ -12,12 +12,14 @@ struct OrderItem: Identifiable {
     let restaurantName: String
     let itemDescription: String
     let address: String
+    let image: String
 }
 
 struct OrdersScreen: View {
+    
     @State private var orders = [
-        OrderItem(restaurantName: "Restaurant Name", itemDescription: "X item - Price", address: "Deliver to (Address)"),
-        OrderItem(restaurantName: "Restaurant Name", itemDescription: "X item - Price", address: "Deliver to (Address)")
+        OrderItem(restaurantName: "Restaurant Name", itemDescription: "X item - Price", address: "Deliver to (Address)",image:"123"),
+        OrderItem(restaurantName: "Restaurant Name", itemDescription: "X item - Price", address: "Deliver to (Address)", image:"123")
         // Add more orders as necessary
     ]
 
