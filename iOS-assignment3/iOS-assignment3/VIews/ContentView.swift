@@ -47,5 +47,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .environmentObject(System())
-        .environmentObject(OrderModel())
 }

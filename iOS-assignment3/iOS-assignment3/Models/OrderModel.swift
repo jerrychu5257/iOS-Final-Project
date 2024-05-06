@@ -7,11 +7,13 @@
 
 import Foundation
 
-class OrderModel: ObservableObject{
+struct OrderModel: Identifiable {
     // orders
-    @Published var restaurantName = ""
-    @Published var itemName = ""
-    @Published var itemAmount = ""
-    @Published var price = ""
-    
+    var id = UUID()
+    var image: String = ""
+    var name = ""
+    var itemName = ""
+    var itemAmount:Int = 0
+    var price:Float = 0
+
 }

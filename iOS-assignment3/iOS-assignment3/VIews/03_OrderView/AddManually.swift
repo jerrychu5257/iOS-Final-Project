@@ -23,7 +23,15 @@ class OrderManager: ObservableObject {
         orders.append(newOrder)
     }
 }
+
 struct AddOrderManuallyView: View {
+    
+    // add new order
+    @State var newOrder: OrderModel = OrderModel()
+    
+    // system
+    @EnvironmentObject var system: System
+    
     @EnvironmentObject var orderManager: OrderManager
     @State private var restaurantName: String = ""
     @State private var itemName: String = ""
@@ -67,27 +75,31 @@ struct AddOrderManuallyView: View {
             
             Button(action: {
                 // Perform the add action here
-                if let amount = Int(itemAmount), let itemPrice = Double(price) {
-                    orderManager.addOrder(restaurantName: restaurantName, itemName: itemName, itemAmount: amount, price: itemPrice)
-                    // Clear the text fields after adding the order
-                    restaurantName = ""
-                    itemName = ""
-                    itemAmount = ""
-                    price = ""
-                    // Trigger navigation to OrdersScreen
-                    shouldNavigateToOrders = true
-                }
+//                if let amount = Int(itemAmount), let itemPrice = Double(price) {
+//                    orderManager.addOrder(restaurantName: restaurantName, itemName: itemName, itemAmount: amount, price: itemPrice)
+//                    // Clear the text fields after adding the order
+//                    restaurantName = ""
+//                    itemName = ""
+//                    itemAmount = ""
+//                    price = ""
+//                }
+                newOrder.name = restaurantName
+                itemName = ""
+                newOrder.itemAmount = Int(itemAmount)!
+                newOrder.price = Float(price)!
+                // append to system
+                system.orders.append(newOrder)
+                print(system.orders)
             }) {
-                NavigationLink(destination: OrdersScreen(), isActive: $shouldNavigateToOrders) { EmptyView() }
-                NavigationLink(destination: OrdersScreen()) {
-                    Text("Add")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding()
-                        .background(Color.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
-                .padding(.horizontal)
+                
+                Text("Add")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                    .background(Color.black)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+                    .padding(.horizontal)
+                
             }
             .navigationBarTitle("Add Order Manually", displayMode: .inline)
             .navigationBarItems(leading: Button(action: {
@@ -101,6 +113,7 @@ struct AddOrderManuallyView: View {
             NavigationView {
                 AddOrderManuallyView()
                     .environmentObject(OrderManager()) // Injecting the OrderManager environment object
+                    .environmentObject(System())
             }
         }
     }
