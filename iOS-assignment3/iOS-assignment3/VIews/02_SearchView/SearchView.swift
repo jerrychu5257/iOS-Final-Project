@@ -77,11 +77,11 @@ struct SearchView: View {
                 VStack{
                     Text("Search")
                         .font(.title)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .fontWeight(.bold)
                         .padding(.horizontal, 32)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text("Restaurant near you")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
                         .padding(.horizontal, 32)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.vertical, 16)
@@ -102,7 +102,7 @@ struct SearchView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     Text("Food near you")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
                         .padding(.horizontal, 32)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.vertical, 16)
@@ -117,7 +117,7 @@ struct SearchView: View {
                                             .cornerRadius(16)
                                         Text(foodNames[index])
                                             .font(.system(size: 16))
-                                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                            .fontWeight(.bold)
                                             .foregroundColor(.black)
                                             .frame(width: 160, alignment: .leading)
                                     }
@@ -136,7 +136,7 @@ struct SearchView: View {
                                             .cornerRadius(16)
                                         Text(foodNames[index+8])
                                             .font(.system(size: 16))
-                                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                            .fontWeight(.bold)
                                             .foregroundColor(.black)
                                             .frame(width: 160, alignment: .leading)
                                     }

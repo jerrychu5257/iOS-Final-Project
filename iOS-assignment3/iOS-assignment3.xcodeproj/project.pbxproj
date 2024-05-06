@@ -19,6 +19,11 @@
 		56BA8E592BD7862C00D76C63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA8E582BD7862C00D76C63 /* ContentView.swift */; };
 		56BA8E5B2BD7862E00D76C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BA8E5A2BD7862E00D76C63 /* Assets.xcassets */; };
 		56BA8E5E2BD7862E00D76C63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BA8E5D2BD7862E00D76C63 /* Preview Assets.xcassets */; };
+		5CAD51BD2BE5E81F00FBC1B5 /* specialOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD51BC2BE5E81F00FBC1B5 /* specialOffers.swift */; };
+		5CAD51BF2BE5E8F000FBC1B5 /* OfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD51BE2BE5E8F000FBC1B5 /* OfferView.swift */; };
+		5CAD51C12BE5F1D300FBC1B5 /* EditBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD51C02BE5F1D300FBC1B5 /* EditBudgetView.swift */; };
+		5CAD51C32BE5FB8B00FBC1B5 /* ExpenseRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD51C22BE5FB8B00FBC1B5 /* ExpenseRecordModel.swift */; };
+		5CAD51C52BE7AA0100FBC1B5 /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD51C42BE7AA0100FBC1B5 /* BudgetViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,11 @@
 		56BA8E582BD7862C00D76C63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		56BA8E5A2BD7862E00D76C63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56BA8E5D2BD7862E00D76C63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5CAD51BC2BE5E81F00FBC1B5 /* specialOffers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = specialOffers.swift; sourceTree = "<group>"; };
+		5CAD51BE2BE5E8F000FBC1B5 /* OfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferView.swift; sourceTree = "<group>"; };
+		5CAD51C02BE5F1D300FBC1B5 /* EditBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetView.swift; sourceTree = "<group>"; };
+		5CAD51C22BE5FB8B00FBC1B5 /* ExpenseRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRecordModel.swift; sourceTree = "<group>"; };
+		5CAD51C42BE7AA0100FBC1B5 /* BudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				564BA1532BDF4EE300561A5F /* BudgetView.swift */,
+				5CAD51C02BE5F1D300FBC1B5 /* EditBudgetView.swift */,
+				5CAD51BE2BE5E8F000FBC1B5 /* OfferView.swift */,
 			);
 			path = 04_BudgetView;
 			sourceTree = "<group>";
@@ -99,6 +111,9 @@
 			children = (
 				564BA15C2BE260E600561A5F /* RestaurantModel.swift */,
 				564BA15E2BE26B0600561A5F /* RestaurantViewModel.swift */,
+				5CAD51BC2BE5E81F00FBC1B5 /* specialOffers.swift */,
+				5CAD51C22BE5FB8B00FBC1B5 /* ExpenseRecordModel.swift */,
+				5CAD51C42BE7AA0100FBC1B5 /* BudgetViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CAD51C52BE7AA0100FBC1B5 /* BudgetViewModel.swift in Sources */,
 				564BA1502BDF4EC800561A5F /* SearchView.swift in Sources */,
 				564BA15D2BE260E600561A5F /* RestaurantModel.swift in Sources */,
 				564BA1542BDF4EE300561A5F /* BudgetView.swift in Sources */,
@@ -216,8 +232,12 @@
 				564BA15B2BE1EF0100561A5F /* RestaurantView.swift in Sources */,
 				564BA14E2BDF4EBA00561A5F /* HomeView.swift in Sources */,
 				56BA8E592BD7862C00D76C63 /* ContentView.swift in Sources */,
+				5CAD51C12BE5F1D300FBC1B5 /* EditBudgetView.swift in Sources */,
+				5CAD51BF2BE5E8F000FBC1B5 /* OfferView.swift in Sources */,
+				5CAD51C32BE5FB8B00FBC1B5 /* ExpenseRecordModel.swift in Sources */,
 				564BA15F2BE26B0600561A5F /* RestaurantViewModel.swift in Sources */,
 				56BA8E572BD7862C00D76C63 /* iOS_assignment3App.swift in Sources */,
+				5CAD51BD2BE5E81F00FBC1B5 /* specialOffers.swift in Sources */,
 				564BA1522BDF4ED600561A5F /* OrderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
