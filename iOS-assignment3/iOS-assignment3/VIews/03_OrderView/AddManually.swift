@@ -74,15 +74,6 @@ struct AddOrderManuallyView: View {
             // Invisible NavigationLink activated by the shouldNavigateToOrders state
             
             Button(action: {
-                // Perform the add action here
-//                if let amount = Int(itemAmount), let itemPrice = Double(price) {
-//                    orderManager.addOrder(restaurantName: restaurantName, itemName: itemName, itemAmount: amount, price: itemPrice)
-//                    // Clear the text fields after adding the order
-//                    restaurantName = ""
-//                    itemName = ""
-//                    itemAmount = ""
-//                    price = ""
-//                }
                 newOrder.name = restaurantName
                 itemName = ""
                 newOrder.itemAmount = Int(itemAmount)!

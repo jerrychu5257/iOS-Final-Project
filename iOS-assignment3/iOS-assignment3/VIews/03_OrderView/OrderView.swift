@@ -43,6 +43,7 @@ struct OrdersView: View {
                             
                             Button(action: {
                                 // Action for delete button
+                                system.orders.remove(at: index)
                             }) {
                                 Image(systemName: "trash")
                                     .foregroundColor(.black)
