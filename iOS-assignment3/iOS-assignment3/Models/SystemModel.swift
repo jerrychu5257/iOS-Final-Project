@@ -9,8 +9,8 @@ import Foundation
 
 class System: ObservableObject{
     // badges
-    @Published var orderbadge = 0
-    @Published var budgetbadge = 0
+    @Published var orderbadge: Int = 0
+    @Published var budgetbadge: Int = 0
     
     // orders
     @Published var restaurantOrder: Restaurant = Restaurant(image: "", name: "", rating: 0.0, deliveryTime: 0, lowestPrice: 0.0)
