@@ -8,57 +8,63 @@
 import SwiftUI
 
 struct OrdersView: View {
+    
     @EnvironmentObject var system: System
+    
+    
     var body: some View {
         NavigationView {
             VStack {
                 // Order Summary Section
-                VStack(alignment: .leading) {
-                    HStack {
-                        Image(system.restaurantOrder.image ) // Replace with 'Image("YourImageName")' to use a custom image
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(width: 100, height: 100)
-                                                .background(Color.gray)
-                                                .cornerRadius(8)
-
-                                            VStack(alignment: .leading, spacing: 4) {
-                                                Text(system.restaurantOrder.name)
-                                                    .font(.headline)
-                                                    .fontWeight(.bold)
-                                                
-                                                Text("\(system.orderItemsAmount) item ")
-                                                    .font(.subheadline)
-                                                
-                                                Text("Deliver To : UTS Building 11")
-                                                    .font(.subheadline)
-                                                    .padding(.top, 2)
-                                            }
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            // Action for delete button
-                        }) {
-                            Image(systemName: "trash")
-                                .foregroundColor(.black)
+                ForEach(0..<system.orders.count, id: \.self){ index in
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(system.orders[index].image ) // Replace with 'Image("YourImageName")' to use a custom image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 100)
+                                .background(Color.white)
+                                .cornerRadius(8)
+                            
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(system.orders[index].name)
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                
+                                Text("\(system.orders[index].itemAmount) item ")
+                                    .font(.subheadline)
+                                
+                                Text("Deliver To : UTS Building 11")
+                                    .font(.subheadline)
+                                    .padding(.top, 2)
+                            }
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                // Action for delete button
+                            }) {
+                                Image(systemName: "trash")
+                                    .foregroundColor(.black)
+                            }
                         }
+                        .padding()
+                        NavigationLink(destination: ViewCartScreen()) {
+                            Text("View Cart")
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(Color.gray)
+                                .cornerRadius(8)
+                        }
+                        .padding(.horizontal)
                     }
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .shadow(radius: 2)
                     .padding()
-                    NavigationLink(destination: ViewCartScreen()) {
-                                            Text("View Cart")
-                                                .frame(minWidth: 0, maxWidth: .infinity)
-                                                .padding()
-                                                .foregroundColor(.black)
-                                                .background(Color.gray)
-                                                .cornerRadius(8)
-                                        }
-                                        .padding(.horizontal)
-                                    }
-                                    .background(Color.white)
-                                    .cornerRadius(10)
-                                    .shadow(radius: 2)
-                                    .padding()
+                    
+                }
 
                 NavigationLink(destination: AddOrderManuallyView()) {
                     Text("Add Order Manually")

@@ -30,7 +30,7 @@ struct ViewCartScreen: View {
                         VStack(alignment: .leading) {
                             Text(system.orderItems[index].name)
                                 .font(.headline)
-                            Text("Item amount: 1")
+                            Text("Item amount: \(system.orderItems[index].amount)")
                             Text("Price: $\(system.orderItems[index].price, specifier: "%.2f")")
                         }
 
@@ -44,7 +44,10 @@ struct ViewCartScreen: View {
                         .foregroundColor(.black)
 
                         Button(action: {
-                            system.addItem(id: system.orderItems[index].id)
+                            // add one item amount
+                            system.orderItems[index].amount += 1
+                            system.orderItemsTotalPrice += system.orderItems[index].price
+                            
                         }) {
                             Image(systemName: "plus")
                         }
