@@ -31,26 +31,25 @@ struct AddOrderManuallyView: View {
     @State private var itemAmount: String = ""
     @State private var price: String = ""
     @State private var navigateToOrdersView = false
-
+    
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 15) {
                 TextField("Restaurant Name", text: $restaurantName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-
+                
                 TextField("Item Name", text: $itemName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-
+                
                 TextField("Item Amount", text: $itemAmount)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-
+                
                 TextField("Price", text: $price)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-
+                
                 Button("Add") {
                     if let amount = Int(itemAmount), let itemPrice = Double(price) {
                         orderManager.addOrder(restaurantName: restaurantName, itemName: itemName, itemAmount: amount, price: itemPrice)
@@ -67,17 +66,17 @@ struct AddOrderManuallyView: View {
                 .foregroundColor(.white)
                 .cornerRadius(8)
                 .padding(.horizontal)
-
+                
                 NavigationLink(destination: OrdersView(), isActive: $navigateToOrdersView) {
                     EmptyView()
-                                }
-                            }
+                }
+            }
             .navigationBarTitle("Add Order Manually", displayMode: .inline)
         }
+        
     }
-}
-
-
+    
+    
     struct AddOrderManuallyView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
