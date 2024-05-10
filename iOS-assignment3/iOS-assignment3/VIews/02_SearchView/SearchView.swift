@@ -151,6 +151,7 @@ struct SearchView: View {
                 Spacer()
             }
         }
+        .navigationBarTitle("")
         .navigationBarHidden(true)
         
     }
