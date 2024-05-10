@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561421ED2BE75EB000108829 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561421EC2BE75EB000108829 /* OrderModel.swift */; };
 		564BA14E2BDF4EBA00561A5F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA14D2BDF4EBA00561A5F /* HomeView.swift */; };
 		564BA1502BDF4EC800561A5F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA14F2BDF4EC800561A5F /* SearchView.swift */; };
 		564BA1522BDF4ED600561A5F /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA1512BDF4ED600561A5F /* OrderView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		561421EC2BE75EB000108829 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		564BA14D2BDF4EBA00561A5F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		564BA14F2BDF4EC800561A5F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		564BA1512BDF4ED600561A5F /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				564BA1602BE3C3BA00561A5F /* SystemModel.swift */,
 				564BA1622BE473BC00561A5F /* OrderItemModel.swift */,
 				564BA1642BE474F200561A5F /* OrderItemListViewModel.swift */,
+				561421EC2BE75EB000108829 /* OrderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				564BA1612BE3C3BA00561A5F /* SystemModel.swift in Sources */,
 				564BA1502BDF4EC800561A5F /* SearchView.swift in Sources */,
+				561421ED2BE75EB000108829 /* OrderModel.swift in Sources */,
 				81C6A2AC2BE746AB00A760B6 /* OrderPlaced.swift in Sources */,
 				564BA15D2BE260E600561A5F /* RestaurantModel.swift in Sources */,
 				564BA1542BDF4EE300561A5F /* BudgetView.swift in Sources */,
