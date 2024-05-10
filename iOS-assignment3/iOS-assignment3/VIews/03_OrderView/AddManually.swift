@@ -33,22 +33,22 @@ struct AddOrderManuallyView: View {
     @State private var navigateToOrdersView = false
     
     var body: some View {
-            VStack(alignment: .leading, spacing: 15) {
+            VStack(alignment: .leading, spacing: 55) {
                 TextField("Restaurant Name", text: $restaurantName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                    .padding([.leading, .trailing])
                 
                 TextField("Item Name", text: $itemName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                    .padding([.leading, .trailing])
                 
                 TextField("Item Amount", text: $itemAmount)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                    .padding([.leading, .trailing])
                 
                 TextField("Price", text: $price)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                    .padding([.leading, .trailing])
                 
                 Button("Add") {
                     if let amount = Int(itemAmount), let itemPrice = Double(price) {
@@ -65,7 +65,8 @@ struct AddOrderManuallyView: View {
                 .background(Color.black)
                 .foregroundColor(.white)
                 .cornerRadius(8)
-                .padding(.horizontal)
+                .padding([.leading, .trailing])
+                
                 
                 NavigationLink(destination: OrdersView(), isActive: $navigateToOrdersView) {
                     EmptyView()
@@ -81,6 +82,7 @@ struct AddOrderManuallyView: View {
         static var previews: some View {
             NavigationView {
                 AddOrderManuallyView()
+                    .environmentObject(System())
                     .environmentObject(OrderManager()) // Injecting the OrderManager environment object
             }
         }
