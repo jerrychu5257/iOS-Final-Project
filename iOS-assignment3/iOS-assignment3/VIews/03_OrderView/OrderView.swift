@@ -8,75 +8,82 @@
 import SwiftUI
 
 struct OrdersView: View {
-    
-    @EnvironmentObject var system: System
-    
-    
+    @EnvironmentObject var system: System  // Assuming this has information like restaurantOrder
+    @EnvironmentObject var orderManager: OrderManager  // Manages multiple orders
+
     var body: some View {
         NavigationView {
             VStack {
-                // Order Summary Section
-                ForEach(0..<system.orders.count, id: \.self){ index in
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Image(system.orders[index].image ) // Replace with 'Image("YourImageName")' to use a custom image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 100, height: 100)
-                                .background(Color.white)
-                                .cornerRadius(8)
-                            
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(system.orders[index].name)
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                
-                                Text("\(system.orders[index].itemAmount) item ")
-                                    .font(.subheadline)
-                                
-                                Text("Deliver To : UTS Building 11")
-                                    .font(.subheadline)
-                                    .padding(.top, 2)
-                            }
-                            
-                            Spacer()
-                            
-                            Button(action: {
-                                // Action for delete button
-                                system.orders.remove(at: index)
-                            }) {
-                                Image(systemName: "trash")
-                                    .foregroundColor(.black)
-                            }
+                // Featured Order Summary Section
+                VStack(alignment: .leading) {
+                    HStack {
+                        Image(system.restaurantOrder.image)  // Use a placeholder or actual image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100)
+                            .background(Color.gray)
+                            .cornerRadius(8)
+
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(system.restaurantOrder.name)
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            Text("\(system.orderItemsAmount) item")
+                                .font(.subheadline)
+                            Text("Deliver To: UTS Building 11")
+                                .font(.subheadline)
+                                .padding(.top, 2)
                         }
-                        .padding()
-                        NavigationLink(destination: ViewCartScreen()) {
-                            Text("View Cart")
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .padding()
+
+                        Spacer()
+
+                        Button(action: {
+                            // Action to delete the featured order
+                        }) {
+                            Image(systemName: "trash")
                                 .foregroundColor(.black)
-                                .background(Color.gray)
-                                .cornerRadius(8)
                         }
-                        .padding(.horizontal)
                     }
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 2)
                     .padding()
-                    
+
+                    NavigationLink(destination: ViewCartScreen()) {
+                        Text("View Cart")
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .padding()
+                            .background(Color.gray)
+                            .foregroundColor(.black)
+                            .cornerRadius(8)
+                    }
+                    .padding(.horizontal)
                 }
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 2)
+                .padding()
+
+                // List of All Orders
+                List(orderManager.orders) { order in
+                    VStack(alignment: .leading) {
+                        Text(order.restaurantName)
+                            .font(.headline)
+                        Text(order.itemName)
+                            .font(.subheadline)
+                        Text("Amount: \(order.itemAmount)")
+                        Text("Price: $\(order.price, specifier: "%.2f")")
+                    }
+                }
+                .listStyle(PlainListStyle())
 
                 NavigationLink(destination: AddOrderManuallyView()) {
                     Text("Add Order Manually")
-                        .frame(minWidth: 290, maxWidth:30)
+                        .frame(minWidth: 0, maxWidth: .infinity)
                         .padding()
                         .background(Color.gray)
                         .foregroundColor(.black)
                         .cornerRadius(8)
                 }
                 .padding([.horizontal, .bottom])
-                
+
                 Spacer()
             }
             .background(Color.white)
@@ -84,20 +91,15 @@ struct OrdersView: View {
         }
     }
 }
-    var body: some View {
-        VStack {
-            // Contents of the Add Order Manually View
-            Text("This is the Add Order Manually Screen.") // Placeholder for actual UI components
-                .navigationBarTitle("Add Order Manually", displayMode: .inline)
-            // Add your form or other UI elements here.
-        }
-    }
+
 struct OrdersView_Previews: PreviewProvider {
     static var previews: some View {
         OrdersView()
             .environmentObject(System())
+            .environmentObject(OrderManager())
     }
 }
+
 
 
 

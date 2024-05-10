@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @EnvironmentObject var system: System
-    
+    @EnvironmentObject var system: System  // This will access the provided System object
+
     var body: some View {
         VStack {
-            TabView{
+            TabView {
                 HomeView()
                     .tabItem {
                         Image("icon_Home")
@@ -26,13 +25,13 @@ struct ContentView: View {
                     }
                 OrdersView()
                     .tabItem {
-                        Image("icon_Shopping cart")
+                        Image(systemName: "cart.fill")  // Use SF Symbols for consistency
                         Text("Order")
                     }
                     .badge(system.orderbadge)
                 BudgetView()
                     .tabItem {
-                        Image("icon_Wallet")
+                        Image(systemName: "wallet.pass.fill")  // Use SF Symbols for consistency
                         Text("Budget")
                     }
                     .badge(system.budgetbadge)
@@ -43,8 +42,11 @@ struct ContentView: View {
         .ignoresSafeArea()
     }
 }
-
-#Preview {
-    ContentView()
-        .environmentObject(System())
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(System())  // Continue to provide any other required EnvironmentObjects
+            .environmentObject(OrderManager())  // Providing OrderManager instance
+    }
 }
+
