@@ -23,90 +23,69 @@ class OrderManager: ObservableObject {
         orders.append(newOrder)
     }
 }
-
 struct AddOrderManuallyView: View {
-    
-    // add new order
-    @State var newOrder: OrderModel = OrderModel()
-    
-    // system
-    @EnvironmentObject var system: System
-    
     @EnvironmentObject var orderManager: OrderManager
+    @Environment(\.presentationMode) var presentationMode
     @State private var restaurantName: String = ""
     @State private var itemName: String = ""
     @State private var itemAmount: String = ""
     @State private var price: String = ""
-    // State to manage navigation programmatically
-    @State private var shouldNavigateToOrders = false
+    @State private var navigateToOrdersView = false
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Restaurant Name")
-                .font(.headline)
-                .padding(.horizontal)
-            TextField("", text: $restaurantName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
-            
-            Text("Item Name")
-                .font(.headline)
-                .padding(.horizontal)
-            TextField("", text: $itemName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
-            
-            Text("Item Amount")
-                .font(.headline)
-                .padding(.horizontal)
-            TextField("", text: $itemAmount)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
-            
-            Text("Price")
-                .font(.headline)
-                .padding(.horizontal)
-            TextField("", text: $price)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
-            
-            Spacer()
-            // Invisible NavigationLink activated by the shouldNavigateToOrders state
-            
-            Button(action: {
-                newOrder.name = restaurantName
-                itemName = ""
-                newOrder.itemAmount = Int(itemAmount)!
-                newOrder.price = Float(price)!
-                // append to system
-                system.orders.append(newOrder)
-                print(system.orders)
-            }) {
+            VStack(alignment: .leading, spacing: 55) {
+                TextField("Restaurant Name", text: $restaurantName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding([.leading, .trailing])
                 
-                Text("Add")
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .background(Color.black)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-                    .padding(.horizontal)
+                TextField("Item Name", text: $itemName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding([.leading, .trailing])
                 
+                TextField("Item Amount", text: $itemAmount)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding([.leading, .trailing])
+                
+                TextField("Price", text: $price)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding([.leading, .trailing])
+                
+                Button("Add") {
+                    if let amount = Int(itemAmount), let itemPrice = Double(price) {
+                        orderManager.addOrder(restaurantName: restaurantName, itemName: itemName, itemAmount: amount, price: itemPrice)
+                        restaurantName = ""
+                        itemName = ""
+                        itemAmount = ""
+                        price = ""
+                        navigateToOrdersView = true // Setting the navigation trigger
+                    }
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .background(Color.black)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+                .padding([.leading, .trailing])
+                
+                
+                NavigationLink(destination: OrdersView(), isActive: $navigateToOrdersView) {
+                    EmptyView()
+                }
             }
             .navigationBarTitle("Add Order Manually", displayMode: .inline)
-            .navigationBarItems(leading: Button(action: {
-                // Action to dismiss the view or go back
-            }) {
-            })
         }
+        
     }
+    
+    
     struct AddOrderManuallyView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
                 AddOrderManuallyView()
-                    .environmentObject(OrderManager()) // Injecting the OrderManager environment object
                     .environmentObject(System())
+                    .environmentObject(OrderManager()) // Injecting the OrderManager environment object
             }
         }
     }
-}
+
 

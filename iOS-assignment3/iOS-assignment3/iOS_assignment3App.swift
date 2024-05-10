@@ -13,6 +13,7 @@ struct iOS_assignment3App: App {
         WindowGroup {
             ContentView()
                 .environmentObject(System())
+                .environmentObject(OrderManager())
         }
     }
 }
