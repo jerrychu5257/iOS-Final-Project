@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		561421ED2BE75EB000108829 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561421EC2BE75EB000108829 /* OrderModel.swift */; };
-		563BF0CA2BEF0A4300E1A4B5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563BF0C92BEF0A4300E1A4B5 /* Color.swift */; };
 		564BA14E2BDF4EBA00561A5F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA14D2BDF4EBA00561A5F /* HomeView.swift */; };
 		564BA1502BDF4EC800561A5F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA14F2BDF4EC800561A5F /* SearchView.swift */; };
 		564BA1522BDF4ED600561A5F /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BA1512BDF4ED600561A5F /* OrderView.swift */; };
@@ -38,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		561421EC2BE75EB000108829 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
-		563BF0C92BEF0A4300E1A4B5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		564BA14D2BDF4EBA00561A5F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		564BA14F2BDF4EC800561A5F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		564BA1512BDF4ED600561A5F /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				564BA1622BE473BC00561A5F /* OrderItemModel.swift */,
 				564BA1642BE474F200561A5F /* OrderItemListViewModel.swift */,
 				561421EC2BE75EB000108829 /* OrderModel.swift */,
-				563BF0C92BEF0A4300E1A4B5 /* Color.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,7 +269,6 @@
 				564BA14E2BDF4EBA00561A5F /* HomeView.swift in Sources */,
 				564BA16B2BE4DB1800561A5F /* ViewCart.swift in Sources */,
 				56BA8E592BD7862C00D76C63 /* ContentView.swift in Sources */,
-				563BF0CA2BEF0A4300E1A4B5 /* Color.swift in Sources */,
 				564BA1672BE4DB0700561A5F /* AddManually.swift in Sources */,
 				56CB9A102BEE1C8F0038AA4A /* ExpenseRecordModel.swift in Sources */,
 				564BA15F2BE26B0600561A5F /* RestaurantLIstViewModel.swift in Sources */,
