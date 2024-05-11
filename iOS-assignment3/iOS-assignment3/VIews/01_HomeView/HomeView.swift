@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var system: System
     var orderbefore = OrderAgain.sampleData
     var recommendations = Recommendation.sampleData
     
@@ -20,15 +21,15 @@ struct HomeView: View {
                             Text("User Name")
                                 .font(.system(size: 36, weight: .black, design: .serif))
                                 
-                            Text("Address: XXXXXXX")
-                                .foregroundStyle(.white)
+                            Text("Address: UTS Building 11")
+                                .foregroundStyle(.black)
                                 .padding()
                                 .font(.custom("title", fixedSize: 18))
                                 .frame(maxWidth: 300, maxHeight: 35)
-                                .background(.gray)
+                                .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
                                 .cornerRadius(50)
                                 .opacity(0.7)
-                            Text("Budget: XXXX dollar/month")
+                            Text("Budget: \(system.totalBudget) dollar/month")
                         }
                         .padding()
 
@@ -87,4 +88,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(System())
 }
