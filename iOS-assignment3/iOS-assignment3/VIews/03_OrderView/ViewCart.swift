@@ -38,6 +38,7 @@ struct ViewCartScreen: View {
 
                         Button(action: {
                             system.removeItem(id: system.orderItems[index].id)
+                            system.orderItemsAmount = system.orderItemsAmount-1
                         }) {
                             Image(systemName: "trash")
                         }
@@ -67,6 +68,10 @@ struct ViewCartScreen: View {
                 Button("Checkout") {
                     system.orderbadge = 0
                     navigateToCheckout = true
+                    system.restaurantOrder = Restaurant(image: "", name: "", rating: 0.0, deliveryTime: 0, lowestPrice: 0.0)
+                    system.orderItemsAmount = 0
+                    system.orderItems = []
+                    system.orderItemsTotalPrice = 0
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()

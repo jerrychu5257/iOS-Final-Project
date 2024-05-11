@@ -20,7 +20,7 @@ class System: ObservableObject{
     @Published var orders: [OrderModel] = []
     
     // budget
-    @Published var totalBudget: Int = 2500
+    @Published var totalBudget: Int = 2000
     
     struct CartItem: Identifiable {
             let id: UUID = UUID()

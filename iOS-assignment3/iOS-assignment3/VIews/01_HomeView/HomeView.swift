@@ -18,7 +18,7 @@ struct HomeView: View {
                         // User Information Section
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Welcome 🙌")
-                            Text("User Name")
+                            Text("Thomas Edison")
                                 .font(.system(size: 36, weight: .black, design: .serif))
                                 
                             Text("Address: UTS Building 11")
@@ -46,8 +46,8 @@ struct HomeView: View {
                                                 .resizable()
                                                                             .scaledToFit().frame(width: 100, height: 100)
                                                 .foregroundColor(.gray)
-                                            Text("food name")
-                                            Text("Price: XX$")
+                                            Text(order.foodName)
+                                            Text("Price: \(order.orderAgaiPrice)$")
                                         }
                                     }
                                 }
@@ -66,11 +66,11 @@ struct HomeView: View {
                                         .resizable()
                                         .scaledToFit().frame(width: 100, height: 100)
                                     VStack(alignment: .leading) {
-                                        Text("restaurant name ")
-                                        Text("food")
+                                        Text(order.foodName)
+//                                        Text("food")
                                     }
                                     .frame(width: 160, height: 30 )
-                                    Text("XX$")
+                                    Text("\(order.orderAgaiPrice)$")
                                         .frame(width: 50, height: 30 )
                                 }
                             }

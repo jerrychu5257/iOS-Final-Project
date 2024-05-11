@@ -68,9 +68,9 @@ struct AddOrderManuallyView: View {
                 .padding([.leading, .trailing])
                 
                 
-                NavigationLink(destination: OrdersView(), isActive: $navigateToOrdersView) {
-                    EmptyView()
-                }
+//                NavigationLink(destination: OrdersView(), isActive: $navigateToOrdersView) {
+//                    EmptyView()
+//                }
             }
             .navigationBarTitle("Add Order Manually", displayMode: .inline)
         }

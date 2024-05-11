@@ -144,7 +144,7 @@ struct RestaurantView: View {
                                 Button(action: {
                                     orderItemAmount += 1
                                     // calculate price
-                                    system.orderItemsTotalPrice += viewModel.orderItems[index].price
+                                    system.orderItemsTotalPrice += viewModel.orderItems[index+5].price
                                     // add orderitem
                                     selectedItem.image = viewModel.orderItems[index+5].image
                                     selectedItem.name = viewModel.orderItems[index+5].name
@@ -195,7 +195,7 @@ struct RestaurantView: View {
                                 Button(action: {
                                     orderItemAmount += 1
                                     // calculate price
-                                    system.orderItemsTotalPrice += viewModel.orderItems[index].price
+                                    system.orderItemsTotalPrice += viewModel.orderItems[index+8].price
                                     // add orderitem
                                     selectedItem.image = viewModel.orderItems[index+8].image
                                     selectedItem.name = viewModel.orderItems[index+8].name
@@ -248,7 +248,7 @@ struct RestaurantView: View {
                     selectedOrder.name = system.restaurantOrder.name
                     selectedOrder.itemAmount = system.orderItemsAmount
                     system.orders.append(selectedOrder)
-                    print(system.orders)
+//                    print(system.orders)
                     // send orderItems to Cart
                     system.orderItems = selectedItems
                     selectedItems = []
