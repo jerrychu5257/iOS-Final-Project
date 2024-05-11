@@ -39,7 +39,10 @@ struct RestaurantView: View {
                             Rectangle()
                                 .foregroundColor(.white)
                                 .frame(width: 150, height: 100)
-                                .border(Color.gray)
+//                                .border(Color.gray)
+                                .overlay{
+                                    RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 1)
+                                }
                                 .padding(.horizontal, 8)
                             VStack{
                                 Text("$\(String(format: "%.1f", system.restaurantOrder.rating))")
@@ -53,7 +56,10 @@ struct RestaurantView: View {
                             Rectangle()
                                 .foregroundColor(.white)
                                 .frame(width: 150, height: 100)
-                                .border(Color.gray)
+//                                .border(Color.gray)
+                                .overlay{
+                                    RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 1)
+                                }
                                 .padding(.horizontal, 8)
                             VStack{
                                 Text("\(system.restaurantOrder.deliveryTime) min")
@@ -101,7 +107,8 @@ struct RestaurantView: View {
                                         .padding(4)
                                         .font(.system(size: 16))
                                         .foregroundColor(.black)
-                                        .background(Color.gray.opacity(0.3))
+                                        .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
+                                        .cornerRadius(16)
                                 })
                             }
                             .padding(.horizontal, 32)
@@ -151,7 +158,8 @@ struct RestaurantView: View {
                                         .padding(4)
                                         .font(.system(size: 16))
                                         .foregroundColor(.black)
-                                        .background(Color.gray.opacity(0.3))
+                                        .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
+                                        .cornerRadius(16)
                                 })
                             }
                             .padding(.horizontal, 32)
@@ -202,7 +210,8 @@ struct RestaurantView: View {
                                         .padding(4)
                                         .font(.system(size: 16))
                                         .foregroundColor(.black)
-                                        .background(Color.gray.opacity(0.3))
+                                        .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
+                                        .cornerRadius(16)
                                 })
                             }
                             .padding(.horizontal, 32)
@@ -248,10 +257,12 @@ struct RestaurantView: View {
                 }, label: {
                     Text("Place Order (\(orderItemAmount))")
                         .font(.title)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .frame(width: 340, height: 80)
-                        .background(Color.gray)
+                        .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
+                        .cornerRadius(16)
                         .padding()
+                        
                 })
             }
             

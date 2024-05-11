@@ -62,8 +62,8 @@ struct AddOrderManuallyView: View {
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()
-                .background(Color.black)
-                .foregroundColor(.white)
+                .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
+                .foregroundColor(.black)
                 .cornerRadius(8)
                 .padding([.leading, .trailing])
                 

@@ -70,8 +70,8 @@ struct ViewCartScreen: View {
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()
-                .foregroundColor(.white)
-                .background(Color.black)
+                .foregroundColor(.black)
+                .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
                 .cornerRadius(8)
                 .padding()
                 NavigationLink("", destination: CheckoutScreen(), isActive: $navigateToCheckout)
