@@ -50,7 +50,7 @@ struct OrdersView: View {
                         Text("View Cart")
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding()
-                            .background(Color.gray)
+                            .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
                             .foregroundColor(.black)
                             .cornerRadius(8)
                     }
@@ -78,7 +78,7 @@ struct OrdersView: View {
                     Text("Add Order Manually")
                         .frame(minWidth: 0, maxWidth: .infinity)
                         .padding()
-                        .background(Color.gray)
+                        .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
                         .foregroundColor(.black)
                         .cornerRadius(8)
                 }

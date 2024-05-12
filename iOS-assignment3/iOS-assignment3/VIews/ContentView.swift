@@ -15,12 +15,12 @@ struct ContentView: View {
             TabView {
                 HomeView()
                     .tabItem {
-                        Image("icon_Home")
+                        Image(systemName: "house.fill")
                         Text("Home")
                     }
                 SearchView()
                     .tabItem {
-                        Image("icon_Search")
+                        Image(systemName: "magnifyingglass")
                         Text("Search")
                     }
                 OrdersView()
@@ -47,6 +47,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .environmentObject(System())  // Continue to provide any other required EnvironmentObjects
             .environmentObject(OrderManager())  // Providing OrderManager instance
+            .preferredColorScheme(.light)
     }
 }
 
