@@ -19,6 +19,10 @@ class System: ObservableObject{
     @Published var orderItemsTotalPrice: Float = 0.0
     @Published var orders: [OrderModel] = []
     
+    // budget
+    @Published var totalBudget: Int = 2000
+    @Published var currentBudget: Int = 1237
+    
     struct CartItem: Identifiable {
             let id: UUID = UUID()
             var name: String

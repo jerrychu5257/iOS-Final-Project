@@ -24,14 +24,14 @@
 		56BA8E592BD7862C00D76C63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BA8E582BD7862C00D76C63 /* ContentView.swift */; };
 		56BA8E5B2BD7862E00D76C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BA8E5A2BD7862E00D76C63 /* Assets.xcassets */; };
 		56BA8E5E2BD7862E00D76C63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56BA8E5D2BD7862E00D76C63 /* Preview Assets.xcassets */; };
-		5CDACDEB2BEE1770002D38AF /* OfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDACDE72BEE1770002D38AF /* OfferView.swift */; };
-		5CDACDEC2BEE1770002D38AF /* VerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDACDE82BEE1770002D38AF /* VerifyView.swift */; };
-		5CDACDED2BEE1770002D38AF /* EditBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDACDE92BEE1770002D38AF /* EditBudgetView.swift */; };
-		5CDACDEE2BEE1770002D38AF /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDACDEA2BEE1770002D38AF /* BudgetView.swift */; };
-		5CDACDF12BEE178F002D38AF /* specialOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDACDEF2BEE178F002D38AF /* specialOffers.swift */; };
-		5CDACDF22BEE178F002D38AF /* UniversitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDACDF02BEE178F002D38AF /* UniversitiesModel.swift */; };
-		5CDACDF42BEE1797002D38AF /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDACDF32BEE1797002D38AF /* BudgetViewModel.swift */; };
-		5CDACDF62BEE17B0002D38AF /* ExpenseRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDACDF52BEE17B0002D38AF /* ExpenseRecordModel.swift */; };
+		56CB9A082BEE1C770038AA4A /* EditBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9A042BEE1C770038AA4A /* EditBudgetView.swift */; };
+		56CB9A092BEE1C770038AA4A /* OfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9A052BEE1C770038AA4A /* OfferView.swift */; };
+		56CB9A0A2BEE1C770038AA4A /* VerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9A062BEE1C770038AA4A /* VerifyView.swift */; };
+		56CB9A0B2BEE1C770038AA4A /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9A072BEE1C770038AA4A /* BudgetView.swift */; };
+		56CB9A102BEE1C8F0038AA4A /* ExpenseRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9A0C2BEE1C8E0038AA4A /* ExpenseRecordModel.swift */; };
+		56CB9A112BEE1C8F0038AA4A /* BudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9A0D2BEE1C8F0038AA4A /* BudgetViewModel.swift */; };
+		56CB9A122BEE1C8F0038AA4A /* UniversitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9A0E2BEE1C8F0038AA4A /* UniversitiesModel.swift */; };
+		56CB9A132BEE1C8F0038AA4A /* specialOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CB9A0F2BEE1C8F0038AA4A /* specialOffers.swift */; };
 		81C6A2AC2BE746AB00A760B6 /* OrderPlaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6A2AB2BE746AB00A760B6 /* OrderPlaced.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,14 +54,14 @@
 		56BA8E582BD7862C00D76C63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		56BA8E5A2BD7862E00D76C63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56BA8E5D2BD7862E00D76C63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5CDACDE72BEE1770002D38AF /* OfferView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfferView.swift; path = "../../../../../../../Desktop/iOS-assignment3/VIews/04_BudgetView/OfferView.swift"; sourceTree = "<group>"; };
-		5CDACDE82BEE1770002D38AF /* VerifyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerifyView.swift; path = "../../../../../../../Desktop/iOS-assignment3/VIews/04_BudgetView/VerifyView.swift"; sourceTree = "<group>"; };
-		5CDACDE92BEE1770002D38AF /* EditBudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBudgetView.swift; path = "../../../../../../../Desktop/iOS-assignment3/VIews/04_BudgetView/EditBudgetView.swift"; sourceTree = "<group>"; };
-		5CDACDEA2BEE1770002D38AF /* BudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetView.swift; path = "../../../../../../../Desktop/iOS-assignment3/VIews/04_BudgetView/BudgetView.swift"; sourceTree = "<group>"; };
-		5CDACDEF2BEE178F002D38AF /* specialOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = specialOffers.swift; path = "../../../../../../Desktop/iOS-assignment3/Models/specialOffers.swift"; sourceTree = "<group>"; };
-		5CDACDF02BEE178F002D38AF /* UniversitiesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniversitiesModel.swift; path = "../../../../../../Desktop/iOS-assignment3/Models/UniversitiesModel.swift"; sourceTree = "<group>"; };
-		5CDACDF32BEE1797002D38AF /* BudgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetViewModel.swift; path = "../../../../../../Desktop/iOS-assignment3/Models/BudgetViewModel.swift"; sourceTree = "<group>"; };
-		5CDACDF52BEE17B0002D38AF /* ExpenseRecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpenseRecordModel.swift; path = "../../../../../../Desktop/iOS-assignment3/Models/ExpenseRecordModel.swift"; sourceTree = "<group>"; };
+		56CB9A042BEE1C770038AA4A /* EditBudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBudgetView.swift; path = "../../../../../../../../../../../../Downloads/iOS-assignment3/VIews/04_BudgetView/EditBudgetView.swift"; sourceTree = "<group>"; };
+		56CB9A052BEE1C770038AA4A /* OfferView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OfferView.swift; path = "../../../../../../../../../../../../Downloads/iOS-assignment3/VIews/04_BudgetView/OfferView.swift"; sourceTree = "<group>"; };
+		56CB9A062BEE1C770038AA4A /* VerifyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerifyView.swift; path = "../../../../../../../../../../../../Downloads/iOS-assignment3/VIews/04_BudgetView/VerifyView.swift"; sourceTree = "<group>"; };
+		56CB9A072BEE1C770038AA4A /* BudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetView.swift; path = "../../../../../../../../../../../../Downloads/iOS-assignment3/VIews/04_BudgetView/BudgetView.swift"; sourceTree = "<group>"; };
+		56CB9A0C2BEE1C8E0038AA4A /* ExpenseRecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpenseRecordModel.swift; path = "../../../../../../../../../../../Downloads/iOS-assignment3/Models/ExpenseRecordModel.swift"; sourceTree = "<group>"; };
+		56CB9A0D2BEE1C8F0038AA4A /* BudgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetViewModel.swift; path = "../../../../../../../../../../../Downloads/iOS-assignment3/Models/BudgetViewModel.swift"; sourceTree = "<group>"; };
+		56CB9A0E2BEE1C8F0038AA4A /* UniversitiesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniversitiesModel.swift; path = "../../../../../../../../../../../Downloads/iOS-assignment3/Models/UniversitiesModel.swift"; sourceTree = "<group>"; };
+		56CB9A0F2BEE1C8F0038AA4A /* specialOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = specialOffers.swift; path = "../../../../../../../../../../../Downloads/iOS-assignment3/Models/specialOffers.swift"; sourceTree = "<group>"; };
 		81C6A2AB2BE746AB00A760B6 /* OrderPlaced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPlaced.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,10 +120,10 @@
 		564BA14C2BDF4E8500561A5F /* 04_BudgetView */ = {
 			isa = PBXGroup;
 			children = (
-				5CDACDEA2BEE1770002D38AF /* BudgetView.swift */,
-				5CDACDE92BEE1770002D38AF /* EditBudgetView.swift */,
-				5CDACDE72BEE1770002D38AF /* OfferView.swift */,
-				5CDACDE82BEE1770002D38AF /* VerifyView.swift */,
+				56CB9A072BEE1C770038AA4A /* BudgetView.swift */,
+				56CB9A042BEE1C770038AA4A /* EditBudgetView.swift */,
+				56CB9A052BEE1C770038AA4A /* OfferView.swift */,
+				56CB9A062BEE1C770038AA4A /* VerifyView.swift */,
 			);
 			path = 04_BudgetView;
 			sourceTree = "<group>";
@@ -131,16 +131,16 @@
 		564BA1572BDF755200561A5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				56CB9A0D2BEE1C8F0038AA4A /* BudgetViewModel.swift */,
+				56CB9A0C2BEE1C8E0038AA4A /* ExpenseRecordModel.swift */,
+				56CB9A0F2BEE1C8F0038AA4A /* specialOffers.swift */,
+				56CB9A0E2BEE1C8F0038AA4A /* UniversitiesModel.swift */,
 				564BA15C2BE260E600561A5F /* RestaurantModel.swift */,
 				564BA15E2BE26B0600561A5F /* RestaurantLIstViewModel.swift */,
 				564BA1602BE3C3BA00561A5F /* SystemModel.swift */,
 				564BA1622BE473BC00561A5F /* OrderItemModel.swift */,
 				564BA1642BE474F200561A5F /* OrderItemListViewModel.swift */,
 				561421EC2BE75EB000108829 /* OrderModel.swift */,
-				5CDACDEF2BEE178F002D38AF /* specialOffers.swift */,
-				5CDACDF02BEE178F002D38AF /* UniversitiesModel.swift */,
-				5CDACDF52BEE17B0002D38AF /* ExpenseRecordModel.swift */,
-				5CDACDF32BEE1797002D38AF /* BudgetViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,28 +251,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDACDF12BEE178F002D38AF /* specialOffers.swift in Sources */,
 				564BA1612BE3C3BA00561A5F /* SystemModel.swift in Sources */,
+				56CB9A092BEE1C770038AA4A /* OfferView.swift in Sources */,
 				564BA1502BDF4EC800561A5F /* SearchView.swift in Sources */,
 				561421ED2BE75EB000108829 /* OrderModel.swift in Sources */,
-				5CDACDEC2BEE1770002D38AF /* VerifyView.swift in Sources */,
+				56CB9A122BEE1C8F0038AA4A /* UniversitiesModel.swift in Sources */,
+				56CB9A082BEE1C770038AA4A /* EditBudgetView.swift in Sources */,
+				56CB9A112BEE1C8F0038AA4A /* BudgetViewModel.swift in Sources */,
 				81C6A2AC2BE746AB00A760B6 /* OrderPlaced.swift in Sources */,
 				564BA15D2BE260E600561A5F /* RestaurantModel.swift in Sources */,
 				564BA1632BE473BC00561A5F /* OrderItemModel.swift in Sources */,
+				56CB9A0A2BEE1C770038AA4A /* VerifyView.swift in Sources */,
+				56CB9A0B2BEE1C770038AA4A /* BudgetView.swift in Sources */,
+				56CB9A132BEE1C8F0038AA4A /* specialOffers.swift in Sources */,
 				564BA1592BE1EEEE00561A5F /* CollectionView.swift in Sources */,
 				564BA15B2BE1EF0100561A5F /* RestaurantView.swift in Sources */,
-				5CDACDEE2BEE1770002D38AF /* BudgetView.swift in Sources */,
 				564BA14E2BDF4EBA00561A5F /* HomeView.swift in Sources */,
-				5CDACDEB2BEE1770002D38AF /* OfferView.swift in Sources */,
-				5CDACDED2BEE1770002D38AF /* EditBudgetView.swift in Sources */,
 				564BA16B2BE4DB1800561A5F /* ViewCart.swift in Sources */,
 				56BA8E592BD7862C00D76C63 /* ContentView.swift in Sources */,
 				564BA1672BE4DB0700561A5F /* AddManually.swift in Sources */,
-				5CDACDF22BEE178F002D38AF /* UniversitiesModel.swift in Sources */,
+				56CB9A102BEE1C8F0038AA4A /* ExpenseRecordModel.swift in Sources */,
 				564BA15F2BE26B0600561A5F /* RestaurantLIstViewModel.swift in Sources */,
-				5CDACDF62BEE17B0002D38AF /* ExpenseRecordModel.swift in Sources */,
 				564BA1652BE474F200561A5F /* OrderItemListViewModel.swift in Sources */,
-				5CDACDF42BEE1797002D38AF /* BudgetViewModel.swift in Sources */,
 				56BA8E572BD7862C00D76C63 /* iOS_assignment3App.swift in Sources */,
 				564BA1522BDF4ED600561A5F /* OrderView.swift in Sources */,
 			);

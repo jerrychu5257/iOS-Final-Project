@@ -19,7 +19,7 @@ struct CollectionView: View {
             ZStack{
                 Rectangle()
                     .frame(height: 120)
-                    .foregroundColor(.gray.opacity(0.3))
+                    .foregroundColor(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
                 Text("Fast Food")
                     .font(.system(size: 24))
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -45,6 +45,7 @@ struct CollectionView: View {
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
                         .background(.gray.opacity(0.3))
+                        .cornerRadius(16)
                 })
                 Button(action: {
                     viewModel.SortByRating()
@@ -54,6 +55,7 @@ struct CollectionView: View {
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
                         .background(.gray.opacity(0.3))
+                        .cornerRadius(16)
                 })
                 Button(action: {
                     viewModel.SortByDeliveryTime()
@@ -63,6 +65,7 @@ struct CollectionView: View {
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
                         .background(.gray.opacity(0.3))
+                        .cornerRadius(16)
                 })
             }
             Text("\(viewModel.restaurants.count) Results")
@@ -97,7 +100,7 @@ struct CollectionView: View {
                             Rectangle()
                                 .frame(width: 60, height: 60)
                                 .cornerRadius(30)
-                                .foregroundColor(.gray.opacity(0.2))
+                                .foregroundColor(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
                             Text("$\(String(format: "%.1f", viewModel.restaurants[index].lowestPrice))")
                                 .fontWeight(.bold)
                                 .font(.system(size: 20))
