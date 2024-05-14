@@ -35,10 +35,10 @@ struct OrderAgain: Identifiable {
 
 extension OrderAgain {
     static let sampleData = [
-        OrderAgain(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "ThaiGreenCurry"),
-        OrderAgain(foodName: "Creamy milkshake", orderAgaiPrice: "20", iconName: "eggRice"),
+        OrderAgain(foodName: "ThaiGreenCurry", orderAgaiPrice: "20", iconName: "ThaiGreenCurry"),
+        OrderAgain(foodName: "eggRice", orderAgaiPrice: "20", iconName: "eggRice"),
         OrderAgain(foodName: "Chicken Curry rice", orderAgaiPrice: "20", iconName: "mealPrep1"),
-        OrderAgain(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "mealPrep2"),
+        OrderAgain(foodName: "Creamy milkshake", orderAgaiPrice: "20", iconName: "mealPrep2"),
         
     ]
 }
@@ -54,9 +54,9 @@ struct Recommendation: Identifiable {
 
 extension Recommendation {
     static let sampleData = [
-        Recommendation(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "bubbleTea"),
-        Recommendation(foodName: "Creamy milkshake", orderAgaiPrice: "20", iconName: "image_food_Japanese"),
-        Recommendation(foodName: "Chicken Curry rice", orderAgaiPrice: "20", iconName: "pizzaHut"),
+        Recommendation(foodName: "bubbleTea", orderAgaiPrice: "20", iconName: "bubbleTea"),
+        Recommendation(foodName: "Salmon Sushi", orderAgaiPrice: "20", iconName: "image_food_Japanese"),
+        Recommendation(foodName: "Chicken Pizza", orderAgaiPrice: "20", iconName: "pizzaHut"),
         Recommendation(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "pizzaHut"),
         Recommendation(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "pizzaHut"),
         Recommendation(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "pizzaHut"),
