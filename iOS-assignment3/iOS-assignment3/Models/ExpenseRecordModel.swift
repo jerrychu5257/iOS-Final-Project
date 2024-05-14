@@ -23,11 +23,14 @@ extension DailyExpense {
         DailyExpense(date: "04 MAY 2024", description: "Kung Pao Chicken Rice", cost: "12.54", iconName: "pizzaHut"),
         DailyExpense(date: "04 MAY 2024",description: "Vegan Burrito Bowl", cost: "15.80", iconName: "pizzaHut"),
         DailyExpense(date: "04 MAY 2024",description: "Iced Latte", cost: "6.50", iconName: "pizzaHut"),
-        
         DailyExpense(date: "03 MAY 2024", description: "Margherita Pizza", cost: "15.00", iconName: "pizzaHut"),
         DailyExpense(date: "03 MAY 2024", description: "Kung Pao Chicken Rice", cost: "12.54", iconName: "pizzaHut"),
         DailyExpense(date: "03 MAY 2024",description: "Vegan Burrito Bowl", cost: "15.80", iconName: "pizzaHut"),
         DailyExpense(date: "03 MAY 2024",description: "Iced Latte", cost: "6.50", iconName: "pizzaHut"),
-
+        DailyExpense(date: "04 MAY 2024", description: "Margherita Pizza", cost: "15.00", iconName: "pizzaHut"),
+        DailyExpense(date: "04 MAY 2024", description: "Kung Pao Chicken Rice", cost: "12.54", iconName: "pizzaHut"),
+        DailyExpense(date: "04 MAY 2024",description: "Vegan Burrito Bowl", cost: "15.80", iconName: "pizzaHut"),
+        DailyExpense(date: "04 MAY 2024",description: "Iced Latte", cost: "6.50", iconName: "pizzaHut"),
+        DailyExpense(date: "03 MAY 2024", description: "Margherita Pizza", cost: "15.00", iconName: "pizzaHut")
     ]
 }

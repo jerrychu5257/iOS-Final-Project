@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct EditBudgetView: View {
-    @State var totalBudget: String
+    
+    @EnvironmentObject var system: System
     @State private var budgetInput: String = ""
 
     
@@ -19,16 +20,17 @@ struct EditBudgetView: View {
                 .padding()
             
             Button("Submit") {
-                if let amountToAdd = Int(budgetInput) {
-                let currentBudget = Int(totalBudget.components(separatedBy: " ").first ?? "0") ?? 0
-                let newBudget = currentBudget + amountToAdd
-                totalBudget = "\(newBudget) dollar / month"
-              }
+                system.totalBudget = Int(budgetInput)!
+//                if let amountToAdd = Int(budgetInput) {
+//                let currentBudget = Int(totalBudget.components(separatedBy: " ").first ?? "0") ?? 0
+//                let newBudget = currentBudget + amountToAdd
+//                totalBudget = "\(newBudget) dollar / month"
+//              }
             }
             .padding()
             .frame(maxWidth: .infinity)
-            .background(Color.blue)
-            .foregroundColor(.white)
+            .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
+            .foregroundColor(.black)
             .cornerRadius(10)
         }
         .navigationTitle("Edit Budget")
@@ -39,5 +41,6 @@ struct EditBudgetView: View {
 }
 
 #Preview {
-    EditBudgetView(totalBudget: "")
+    EditBudgetView()
+        .environmentObject(System())
 }
