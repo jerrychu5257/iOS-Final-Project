@@ -75,84 +75,87 @@ struct SearchView: View {
         NavigationView{
             ScrollView{
                 VStack{
-                    Text("Search")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.horizontal, 32)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Restaurant near you")
-                        .font(.title)
-                        .padding(.horizontal, 32)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.vertical, 16)
-                    ScrollView(.horizontal){
+                    // Restaurant Near You
+                    VStack{
+                        Text("Restaurant near you")
+                            .font(.title2)
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .padding(.horizontal, 32)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        ScrollView(.horizontal){
+                            HStack{
+                                ForEach(0..<restaurantImages.count, id: \.self) { index in
+                                    VStack{
+                                        Image(restaurantImages[index])
+                                            .resizable()
+                                            .frame(width: 80, height: 80)
+                                            .cornerRadius(16)
+                                        Text(restaurantNames[index])
+                                            .font(.system(size: 12))
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 32)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    }
+                    .padding(.vertical, 16)
+                    // Food Near You
+                    VStack{
+                        Text("Food near you")
+                            .font(.title2)
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .padding(.horizontal, 32)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         HStack{
-                            ForEach(0..<restaurantImages.count, id: \.self) { index in
-                                VStack{
-                                    Image(restaurantImages[index])
-                                        .resizable()
-                                        .frame(width: 80, height: 80)
-                                        .cornerRadius(16)
-                                    Text(restaurantNames[index])
-                                        .font(.system(size: 12))
+                            VStack{
+                                ForEach(0..<foodImages.count/2, id: \.self){ index in
+                                    NavigationLink(destination: CollectionView()){
+                                        VStack{
+                                            Image(foodImages[index])
+                                                .resizable()
+                                                .frame(width: 160, height: 100)
+                                                .cornerRadius(16)
+                                            Text(foodNames[index])
+                                                .font(.system(size: 16))
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.black)
+                                                .frame(width: 160, alignment: .leading)
+                                        }
+                                        .padding(.vertical, 6)
+                                    }
+                                    
                                 }
+                            }
+                            VStack{
+                                ForEach(0..<foodImages.count/2, id: \.self){ index in
+                                    NavigationLink(destination: CollectionView()){
+                                        VStack{
+                                            Image(foodImages[index+8])
+                                                .resizable()
+                                                .frame(width: 160, height: 100)
+                                                .cornerRadius(16)
+                                            Text(foodNames[index+8])
+                                                .font(.system(size: 16))
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.black)
+                                                .frame(width: 160, alignment: .leading)
+                                        }
+                                    }
+                                }
+                                .padding(.vertical, 6)
                             }
                         }
                         .padding(.horizontal, 32)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    Text("Food near you")
-                        .font(.title)
-                        .padding(.horizontal, 32)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.vertical, 16)
-                    HStack{
-                        VStack{
-                            ForEach(0..<foodImages.count/2, id: \.self){ index in
-                                NavigationLink(destination: CollectionView()){
-                                    VStack{
-                                        Image(foodImages[index])
-                                            .resizable()
-                                            .frame(width: 160, height: 100)
-                                            .cornerRadius(16)
-                                        Text(foodNames[index])
-                                            .font(.system(size: 16))
-                                            .fontWeight(.bold)
-                                            .foregroundColor(.black)
-                                            .frame(width: 160, alignment: .leading)
-                                    }
-                                    .padding(.vertical, 6)
-                                }
-                                
-                            }
-                        }
-                        VStack{
-                            ForEach(0..<foodImages.count/2, id: \.self){ index in
-                                NavigationLink(destination: CollectionView()){
-                                    VStack{
-                                        Image(foodImages[index+8])
-                                            .resizable()
-                                            .frame(width: 160, height: 100)
-                                            .cornerRadius(16)
-                                        Text(foodNames[index+8])
-                                            .font(.system(size: 16))
-                                            .fontWeight(.bold)
-                                            .foregroundColor(.black)
-                                            .frame(width: 160, alignment: .leading)
-                                    }
-                                }
-                            }
-                            .padding(.vertical, 6)
-                        }
-                    }
-                    .padding(.horizontal, 32)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
                 }
+                .navigationBarTitle("Search", displayMode: .inline)
                 Spacer()
             }
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        
         
     }
 }
