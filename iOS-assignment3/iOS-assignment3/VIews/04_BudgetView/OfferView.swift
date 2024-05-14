@@ -11,35 +11,68 @@ struct OfferView: View {
     
     var promoOffers = ["Free 6PC Wings", "40% OFF", "7 OFF", "Free Medium Pizza"]
     @State private var selectedPage = 0
+    @State private var showingVerifyView = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        
         
         ZStack{
             Rectangle()
                 .foregroundStyle(.white)
                 .ignoresSafeArea()
             VStack(alignment: .leading){
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()  // Dismiss the view
+                    }) {
+                        Image(systemName: "chevron.down.circle.fill")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
+                            .padding()
+                    }
+                                    
+                    Text("Your Promo Passport!")
+                    //.font(.title)
+                        
+                        .bold()
+                        .font(.custom(
+                            "ArialRoundedMTBold",
+                            fixedSize: 24))
+                        .padding(.bottom, -40)
+                        .padding(.top, 20)
+                                }
+
                 
-                Text("Your Promo Passport!")
-                //.font(.title)
-                    .padding()
-                    .bold()
-                    .font(.custom(
-                        "ArialRoundedMTBold",
-                        fixedSize: 24))
-                    .padding(.bottom, -40)
-                    .padding(.top, 10)
                 
                 TabView{
-                    ForEach(0..<5) { index in // Assuming there are 5 promo items
+                    ForEach(0..<1) { index in // Assuming there are 5 promo items
                         studentCard (index: index)
                     }
+                    Button(action: {
+                        showingVerifyView = true
+                    }) {
+                        VStack {
+                            Image(systemName: "plus.circle.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 100)
+                                .foregroundColor(.blue)
+                            Text("Add New ID")
+                        }
+                        .frame(width: 300, height: 190)
+                        .background(Color.blue.opacity(0.2))
+                        .cornerRadius(10)
+                    }
+                    .padding(.horizontal)
+                    .tag(promoOffers.count)
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                 .frame(height: 280) // Adjust the height according to your needs
                 
                 Spacer()
+                
+                
                 Text("Exclusive Eats")
                     .padding()
                     .font(.custom(
@@ -53,6 +86,9 @@ struct OfferView: View {
                 
             }
         }
+        .sheet(isPresented: $showingVerifyView) {
+                    VerifyView()  // Present VerifyView as a sheet
+                }
     }
     
     struct studentCard: View{
