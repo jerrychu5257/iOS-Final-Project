@@ -27,9 +27,14 @@ struct BudgetView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.horizontal)
                     HStack {
-                        Text("Your Total Budget")
-                                .font(.custom("headline", fixedSize: 20))
-                                .padding()
+                        Text("Total Budget")
+                            .bold()
+                            .font(.custom(
+                                "ArialRoundedMTBold",
+                                fixedSize: 20))
+                            .padding(.bottom, -5)
+                            .padding()
+                            
                         Spacer()
                         Button(action: {
                             self.isEditingBudget.toggle()
@@ -40,28 +45,35 @@ struct BudgetView: View {
                         .padding()
                     }
                     Text("\(system.totalBudget) dollar / month")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.white)
                         .padding()
-                        .font(.custom("title", fixedSize: 18))
-                        .frame(maxWidth: 250)
-                        .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
+                        .font(.system(size: 18, design: .rounded))
+                        .bold()
+                        .frame(maxWidth: 280)
+                        .background(Color(UIColor(red: 240/255, green: 140/255, blue: 30/255, alpha: 1)))
                         .cornerRadius(50)
+                        .offset(x: 35, y: -5)
                         
-                        
+                    
                     .padding(.horizontal)
-
+                    
                     HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Your Current Budget")
-                                .font(.custom("headline", fixedSize: 20))
-                                .padding(.vertical)
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Current Budget")
+                                .bold()
+                                .font(.custom(
+                                    "ArialRoundedMTBold",
+                                    fixedSize: 20))
+                                .padding(.bottom, 10)
                             Text("\(system.currentBudget) dollar")
-                                .foregroundStyle(.black)
+                                .foregroundStyle(.white)
                                 .padding()
-                                .font(.custom("title", fixedSize: 18))
-                                .frame(maxWidth: 250)
-                                .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
+                                .font(.system(size: 18, design: .rounded))
+                                .bold()
+                                .frame(maxWidth: 280)
+                                .background(Color(UIColor(red: 240/255, green: 140/255, blue: 30/255, alpha: 1)))
                                 .cornerRadius(50)
+                                .offset(x: 35, y: -5)
                         }
                         Spacer()
                     }
