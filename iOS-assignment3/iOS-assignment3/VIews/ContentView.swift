@@ -16,7 +16,10 @@ struct ContentView: View {
                 HomeView()
                     .tabItem {
                         Image(systemName: "house.fill")
+                            
+                            .foregroundColor(.appOrange)
                         Text("Home")
+                        
                     }
                 SearchView()
                     .tabItem {
@@ -36,6 +39,7 @@ struct ContentView: View {
                     }
                     .badge(system.budgetbadge)
             }
+            
             .background(Color.gray)
         }
         .padding()
