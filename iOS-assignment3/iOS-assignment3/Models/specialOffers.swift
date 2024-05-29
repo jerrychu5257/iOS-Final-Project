@@ -56,10 +56,10 @@ extension Recommendation {
     static let sampleData = [
         Recommendation(foodName: "bubbleTea", orderAgaiPrice: "20", iconName: "bubbleTea"),
         Recommendation(foodName: "Salmon Sushi", orderAgaiPrice: "20", iconName: "image_food_Japanese"),
-        Recommendation(foodName: "Chicken Pizza", orderAgaiPrice: "20", iconName: "pizzaHut"),
-        Recommendation(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "pizzaHut"),
-        Recommendation(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "pizzaHut"),
-        Recommendation(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "pizzaHut"),
+        Recommendation(foodName: "Korean Tteokbokki", orderAgaiPrice: "20", iconName: "image_food_Korean"),
+        Recommendation(foodName: "Onion Rings", orderAgaiPrice: "20", iconName: "image_item_Onion Rings"),
+        Recommendation(foodName: "Sushi Box", orderAgaiPrice: "20", iconName: "image_food_Sushi"),
+        Recommendation(foodName: "Bean and vegetable burger", orderAgaiPrice: "20", iconName: "image_food_Malaysian"),
         
         
     ]

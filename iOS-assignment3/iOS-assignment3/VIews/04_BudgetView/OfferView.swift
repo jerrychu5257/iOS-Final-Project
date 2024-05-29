@@ -101,7 +101,7 @@ struct OfferView: View {
                     .frame(width: 300, height: 190)
             }
             .padding(8)
-            .background(Color.blue.opacity(0.2))
+            .background(Color(UIColor(red: 255/255, green: 233/255, blue: 191/255, alpha: 1)))
             .cornerRadius(10)
             .padding(.horizontal)
         }
